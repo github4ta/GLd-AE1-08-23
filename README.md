@@ -9,3 +9,4 @@
 - Dmitriy Medvedev
 - Irina Novik
 - Pavel Yatsevich
+- Sergey Melnik
