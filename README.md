@@ -7,3 +7,4 @@
 - Andrei Unuchak 
 - Denis Baranov
 - Dmitriy Medvedev
+- Irina Novik
