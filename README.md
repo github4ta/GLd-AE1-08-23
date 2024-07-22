@@ -11,3 +11,4 @@
 - Pavel Yatsevich
 - Sergey Melnik
 - Olga Zaitseva
+- Zinko Anton
