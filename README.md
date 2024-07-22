@@ -10,3 +10,4 @@
 - Irina Novik
 - Pavel Yatsevich
 - Sergey Melnik
+- Olga Zaitseva
