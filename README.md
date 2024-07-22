@@ -3,3 +3,4 @@
 - Sergei Tsarik
 - Artsiom Mironchyk
 - Andrei Unuchak 
+- Denis Baranov
