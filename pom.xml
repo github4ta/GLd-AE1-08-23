@@ -7,6 +7,10 @@
     <groupId>by-itAcademy</groupId>
     <artifactId>GLd-AE1-08-23</artifactId>
     <version>1.0.0</version>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
 
-    
+
 </project>
