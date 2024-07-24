@@ -6,11 +6,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class CalculatorTest {
@@ -29,13 +27,13 @@ public class CalculatorTest {
 
     @ParameterizedTest
     @MethodSource("divideDataProvider")
-    void calculatorDivideTest(int a, int b, int expected) {
-        assertEquals(expected, Calculator.divide(a, b));
+    void calculatorDivideTest(int a, int b, double expected) {
+        assertEquals(expected, Calculator.divide(a, b), 0.0000001);
     }
 
     @Test
     void calculatorDivideByZeroTest() {
-        assertEquals(ArithmeticException.class, Calculator.divide(0, 0));
+        assertThrows(ArithmeticException.class, () -> Calculator.divide(0, 0));
     }
 
     @ParameterizedTest
@@ -73,7 +71,6 @@ public class CalculatorTest {
     static Stream<Arguments> divideDataProvider() {
         return Stream.of(
                 arguments(15, 10, 1.5),
-                arguments(0, 0, 0),
                 arguments(-10, -10, 1),
                 arguments(1, 3, 0.3333333)
         );

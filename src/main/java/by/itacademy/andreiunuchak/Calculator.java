@@ -9,7 +9,7 @@ public class Calculator {
         return a*b;
     }
 
-    public static double divide(int a, int b){
+    public static double divide(int a, int b) throws ArithmeticException{
         if(b==0){
             throw new ArithmeticException("division by zero");
         }
