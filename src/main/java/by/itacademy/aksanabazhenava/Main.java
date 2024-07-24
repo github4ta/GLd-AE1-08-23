@@ -6,5 +6,7 @@ public class Main {
         int b = 644;
         System.out.println(Calculator.add(a,b));
         System.out.println(Calculator.multiplay(a,b));
+        System.out.println(Calculator.deduction(450, 541));
+        System.out.println(Calculator.division(900,300));
     }
 }
