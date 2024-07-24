@@ -6,6 +6,7 @@ public class Main {
         int b = 8;
         System.out.println(Calculator.add(a, b));
         System.out.println(Calculator.multiply(a, b));
-
+        System.out.println(Calculator.subtract(a, b));
+        System.out.println(Calculator.division(a, b));
     }
 }
