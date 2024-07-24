@@ -13,6 +13,7 @@ public class Calculator {
         multiplaResult = a * b;
         return multiplaResult;
     }
+
     public static int deduction(int a, int b){
         return (a - b);
     }
