@@ -10,5 +10,11 @@ public class Main {
         System.out.println("enter numbers");
         System.out.println("multiply of two numbers: "
                 + Calculator.multiply(Calculator.getNumber(), Calculator.getNumber()));
+        System.out.println("enter numbers");
+        System.out.println("subtract of two numbers: "
+                + Calculator.subtract(Calculator.getNumber(), Calculator.getNumber()));
+        System.out.println("enter numbers");
+        System.out.println("divide of two numbers: "
+                + Calculator.divide(Calculator.getNumber(), Calculator.getNumber()));
     }
 }

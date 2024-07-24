@@ -13,9 +13,17 @@ public class Calculator {
         return a * b;
     }
 
+    public static int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public static double divide(int a, int b) {
+        return (double) a / b;
+    }
+
     public static int getNumber() {
         while (true) {
-            if (scanner.hasNextInt()){
+            if (scanner.hasNextInt()) {
                 return scanner.nextInt();
             } else {
                 System.out.println("Введены не корректные данные. Повторите ввод");
