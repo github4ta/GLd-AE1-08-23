@@ -21,7 +21,7 @@ public class Calculator {
         if (b != 0) {
             return (double) a / b;
         }else {
-            System.out.println("division by zero");
+            System.out.println("Division by zero!");
             return 0;
         }
     }
@@ -31,7 +31,7 @@ public class Calculator {
             if (scanner.hasNextInt()) {
                 return scanner.nextInt();
             } else {
-                System.out.println("Введены не корректные данные. Повторите ввод");
+                System.out.println("Incorrect data entered. Re-enter!");
                 scanner.nextLine();
             }
         }
