@@ -12,3 +12,4 @@
 - Sergey Melnik
 - Olga Zaitseva
 - Zinko Anton
+- Aksana Bazhenava
