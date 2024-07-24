@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
-    
+
     @Test
-    void add() {
+    void testAdd() {
         //given
         int a = 10;
         int b = 2;
@@ -18,7 +18,7 @@ public class CalculatorTest {
     }
 
     @Test
-    void multiply() {
+    void testMultiply() {
         //given
         int a = 10;
         int b = 2;
@@ -30,7 +30,7 @@ public class CalculatorTest {
     }
 
     @Test
-    void subtract() {
+    void testSubtract() {
         //given
         int a = 10;
         int b = 2;
@@ -42,7 +42,7 @@ public class CalculatorTest {
     }
 
     @Test
-    void divide() {
+    void testDivide() {
         //given
         int a = 10;
         int b = 2;
