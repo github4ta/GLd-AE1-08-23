@@ -8,5 +8,6 @@ public class TeamWork {
         System.out.println("Hello from Artsiom Mironchyk");
         System.out.println("Hello from Aksana Bazhenava");
         System.out.println("Hello from Andrei Unuchak");
+        System.out.println("Hello from Dmitriy Medvedev");
     }
 }
