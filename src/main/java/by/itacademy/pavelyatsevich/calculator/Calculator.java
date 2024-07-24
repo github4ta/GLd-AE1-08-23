@@ -18,7 +18,12 @@ public class Calculator {
     }
 
     public static double divide(int a, int b) {
-        return (double) a / b;
+        if (b != 0) {
+            return (double) a / b;
+        }else {
+            System.out.println("division by zero");
+            return 0;
+        }
     }
 
     public static int getNumber() {
