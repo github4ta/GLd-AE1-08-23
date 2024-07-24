@@ -11,5 +11,7 @@ public class TeamWork {
         System.out.println("Hello from Irina Novik");
         System.out.println("Hello from Dmitriy Medvedev");
         System.out.println("Hello from Sergey Melnik");
+        System.out.println("Hello from Olga Zaitseva!");
+        System.out.println("Hello from Anton Zinko");
     }
 }
