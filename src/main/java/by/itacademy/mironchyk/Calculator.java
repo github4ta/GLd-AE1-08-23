@@ -8,12 +8,11 @@ public class Calculator {
     public static int multiply(int a, int b) {
         return (a * b);
     }
+    public static int deduct(int a, int b) {
 
-    public static int subtract(int a, int b) {
         return (a - b);
     }
-
-    public static int division(int a, int b) {
+    public static int divide(int a, int b) {
         return (a / b);
     }
 }
