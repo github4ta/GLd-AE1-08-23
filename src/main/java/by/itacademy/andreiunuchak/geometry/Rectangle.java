@@ -17,7 +17,7 @@ public class Rectangle {
 
     public void setWidth(double width) {
         if (width <= 0) {
-            throw new IllegalArgumentException("Width of the circle must be greater than 0");
+            throw new IllegalArgumentException("Width of the rectangle must be greater than 0");
         }
         this.width = width;
     }
@@ -28,7 +28,7 @@ public class Rectangle {
 
     public void setHeight(double height) {
         if (height <= 0) {
-            throw new IllegalArgumentException("Height of the circle must be greater than 0");
+            throw new IllegalArgumentException("Height of the rectangle must be greater than 0");
         }
         this.height = height;
     }
