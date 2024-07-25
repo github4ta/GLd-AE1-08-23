@@ -9,7 +9,7 @@ public class Circle {
     }
 
     public Circle(double radius) {
-        this.radius = radius;
+        setRadius(radius);
     }
 
     public double getRadius() {
@@ -17,6 +17,9 @@ public class Circle {
     }
 
     public void setRadius(double radius) {
+        if(radius<0){
+            throw new IllegalArgumentException("Radius can't be less than 0");
+        }
         this.radius = radius;
     }
 
