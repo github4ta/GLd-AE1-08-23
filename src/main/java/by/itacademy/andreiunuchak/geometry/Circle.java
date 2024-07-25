@@ -15,7 +15,7 @@ public class Circle {
 
     public void setRadius(double radius) {
         if(radius<=0){
-            throw new IllegalArgumentException("Radius of the circly must be greater than 0");
+            throw new IllegalArgumentException("Radius of the circle must be greater than 0");
         }
         this.radius = radius;
     }
