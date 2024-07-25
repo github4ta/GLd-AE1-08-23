@@ -5,8 +5,11 @@ import java.util.Objects;
 public class Circle {
     private double radius;
 
+    public Circle() {
+    }
+
     public Circle(double radius) {
-        setRadius(radius);
+        this.radius = radius;
     }
 
     public double getRadius() {
@@ -14,9 +17,6 @@ public class Circle {
     }
 
     public void setRadius(double radius) {
-        if(radius<=0){
-            throw new IllegalArgumentException("Radius of the circle must be greater than 0");
-        }
         this.radius = radius;
     }
 
