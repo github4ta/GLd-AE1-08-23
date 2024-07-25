@@ -1,7 +1,7 @@
 package by.itacademy.mironchyk;
 
-import geometry.Circle;
-import geometry.Rectangle;
+import by.itacademy.mironchyk.geometry.Circle;
+import by.itacademy.mironchyk.geometry.Rectangle;
 
 public class MainGeometry {
     public static void main(String[] args) {
