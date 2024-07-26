@@ -23,12 +23,10 @@ public class Circle {
         this.radius = radius;
     }
 
-    @Override
-    public boolean equals(Object o) {
+    public boolean equals(Circle o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Circle circle = (Circle) o;
-        return Double.compare(radius, circle.radius) == 0;
+        if (o == null) return false;
+        return this.radius == o.radius;
     }
 
     @Override

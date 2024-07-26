@@ -33,12 +33,10 @@ public class Rectangle {
         this.height = height;
     }
 
-    @Override
-    public boolean equals(Object o) {
+    public boolean equals(Rectangle o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Rectangle rectangle = (Rectangle) o;
-        return Double.compare(width, rectangle.width) == 0 && Double.compare(height, rectangle.height) == 0;
+        if (o == null) return false;
+        return this.width == o.width && this.height == o.height;
     }
 
     @Override
