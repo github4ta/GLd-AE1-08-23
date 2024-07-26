@@ -23,10 +23,10 @@ public class Circle {
         this.radius = radius;
     }
 
-    public boolean equals(Circle o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        return this.radius == o.radius;
+    public boolean equals(Circle circle) {
+        if (this == circle) return true;
+        if (circle == null) return false;
+        return this.radius == circle.radius;
     }
 
     @Override

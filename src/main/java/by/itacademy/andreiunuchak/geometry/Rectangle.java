@@ -33,10 +33,10 @@ public class Rectangle {
         this.height = height;
     }
 
-    public boolean equals(Rectangle o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        return this.width == o.width && this.height == o.height;
+    public boolean equals(Rectangle rectangle) {
+        if (this == rectangle) return true;
+        if (rectangle == null) return false;
+        return this.width == rectangle.width && this.height == rectangle.height;
     }
 
     @Override
