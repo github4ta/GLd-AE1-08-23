@@ -1,14 +1,16 @@
 package by.itacademy.andreiunuchak.user;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class User {
     private String login;
     private String password;
 
     public User(String login, String password) {
-        this.login = login;
-        this.password = password;
+        setLogin(login);
+        setPassword(password);
     }
 
     public String getLogin() {
@@ -16,6 +18,8 @@ public class User {
     }
 
     public void setLogin(String login) {
+        if(login==null) throw new NullPointerException();
+        if(!isEmailValid(login)) throw new IllegalArgumentException("Email address is not valid.");
         this.login = login;
     }
 
@@ -24,6 +28,8 @@ public class User {
     }
 
     public void setPassword(String password) {
+        if(password==null) throw new NullPointerException();
+        if(password.isEmpty()) throw new IllegalArgumentException("Password can not be empty");
         this.password = password;
     }
 
@@ -44,5 +50,11 @@ public class User {
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    private boolean isEmailValid(String login){
+        Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+        Matcher mat = pattern.matcher(login);
+        return mat.matches();
     }
 }
