@@ -1,8 +1,8 @@
 package by.itacademy.aksanabazhenava.geometry;
 
 public class Rectangle {
-    int length;
-    int width;
+    public int length;
+    public int width;
 
     public Rectangle() {
     }

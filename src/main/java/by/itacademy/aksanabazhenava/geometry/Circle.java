@@ -1,7 +1,7 @@
 package by.itacademy.aksanabazhenava.geometry;
 
 public class Circle {
-    double radius;
+    public double radius;
 
     public Circle(double radius) {
         this.radius = radius;
