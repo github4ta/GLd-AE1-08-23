@@ -2,11 +2,10 @@ package by.itacademy.aksanabazhenava.user;
 
 import com.github.javafaker.Faker;
 
-import java.io.UnsupportedEncodingException;
-
 public class Users {
     public static User generateRandomUser() {
         Faker faker = new Faker();
-        return new User(faker.internet().userAgentAny(), faker.internet().password());
+        System.out.println(faker.name().firstName() + " " + faker.internet().password());
+        return null;
     }
 }
