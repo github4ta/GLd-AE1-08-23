@@ -7,8 +7,12 @@ public class User {
     public String password;
 
     public User(String login, String password) {
-        this.login = String.valueOf(login);
+        this.login = login;
         this.password = password;
+    }
+
+    public User() {
+
     }
 
     public String getLogin() {
