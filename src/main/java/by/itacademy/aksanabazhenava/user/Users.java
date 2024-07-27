@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 import java.io.UnsupportedEncodingException;
 
 public class Users {
-    public static User generateRandomUser() throws UnsupportedEncodingException {
+    public static User generateRandomUser() {
         Faker faker = new Faker();
         return new User(faker.internet().userAgentAny(), faker.internet().password());
     }
