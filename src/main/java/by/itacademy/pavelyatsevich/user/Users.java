@@ -1,11 +1,11 @@
 package by.itacademy.pavelyatsevich.user;
 
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 
 public class Users {
 
-    public static User generateRandomUser(){
+    public static User generateRandomUser() {
         Faker faker = new Faker();
-        return new User(faker.name().username(),faker.internet().password());
+        return new User(faker.internet().username(), faker.internet().password());
     }
 }
