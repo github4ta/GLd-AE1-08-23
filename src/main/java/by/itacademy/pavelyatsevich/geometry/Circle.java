@@ -30,7 +30,11 @@ public class Circle {
 
     @Override
     public int hashCode() {
-        return Hashing.sha512().newHasher().putInt(radius).hash().asInt();
+        return Hashing.sha512()
+                .newHasher()
+                .putInt(radius)
+                .hash()
+                .asInt();
     }
 
     @Override

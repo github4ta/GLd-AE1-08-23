@@ -1,5 +1,7 @@
 package by.itacademy.pavelyatsevich.geometry;
 
+import com.google.common.hash.Hashing;
+
 import java.util.Objects;
 
 public class Rectangle {
@@ -40,7 +42,12 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(length, width);
+        return Hashing.sha512()
+                .newHasher()
+                .putInt(length)
+                .putInt(width)
+                .hash()
+                .asInt();
     }
 
     @Override
