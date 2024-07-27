@@ -6,6 +6,6 @@ public class Users {
     public static User generateRandomUser() {
         Faker faker = new Faker();
         System.out.println(faker.name().firstName() + " " + faker.internet().password());
-        return null;
+        return new User();
     }
 }
