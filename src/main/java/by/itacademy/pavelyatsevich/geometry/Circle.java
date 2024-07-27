@@ -1,6 +1,6 @@
 package by.itacademy.pavelyatsevich.geometry;
 
-import java.util.Objects;
+import com.google.common.hash.Hashing;
 
 public class Circle {
     private int radius;
@@ -30,7 +30,7 @@ public class Circle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(radius);
+        return Hashing.sha512().newHasher().putInt(radius).hash().asInt();
     }
 
     @Override
