@@ -11,10 +11,6 @@ public class User {
         this.password = password;
     }
 
-    public User() {
-
-    }
-
     public String getLogin() {
         return login;
     }
@@ -40,5 +36,13 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(login, password);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
