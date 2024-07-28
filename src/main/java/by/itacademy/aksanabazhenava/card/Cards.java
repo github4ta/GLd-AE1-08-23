@@ -3,6 +3,7 @@ package by.itacademy.aksanabazhenava.card;
 import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class Cards {
@@ -24,13 +25,16 @@ public class Cards {
         return number.toString();
     }
 
-    public static LocalDate generateRandomExpiredDateCard() {
+    public static String generateRandomExpiredDateCard() {
         Random random = new Random();
-        int year = LocalDate.now().getYear() - random.nextInt(10);
-
+        String[] years = {"24", "25", "26"};
+        String[] monthes = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+        int indexYears = new Random().nextInt(years.length);
+        String year = years[indexYears];
         int month = random.nextInt(12) + 1;
         int day = random.nextInt(28) + 1;
-        return LocalDate.of(year, month, day);
+        String format = LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy-MM-dd"));
+        return format;
     }
 
     public static String generateRandomHolderCard() {
