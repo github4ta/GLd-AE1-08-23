@@ -24,10 +24,10 @@ public class MainGeometry {
         Rectangle rectangle2 = new Rectangle(7, 3);
         System.out.println("Rectangle1 is: " + rectangle1);
         System.out.println("Rectangle2 is: " + rectangle2);
-        System.out.printf("Rectangle2 width is %s and height is %s\n", rectangle2.getWidth(), rectangle2.getHeight());
+        System.out.printf("Rectangle2 width is %s and length is %s\n", rectangle2.getWidth(), rectangle2.getLength());
         System.out.println("Rectangle1 and Rectangle2 are equal: " + rectangle1.equals(rectangle2));
         rectangle2.setWidth(4);
-        rectangle2.setHeight(4);
+        rectangle2.setLength(4);
         System.out.println("Rectangle1 and Rectangle2 are equal: " + rectangle1.equals(rectangle2));
         System.out.println("Rectangle2 hashCode is: " + rectangle2.hashCode());
         Rectangle rectangle3 = new Rectangle(5, 0); // throws IllegalArgumentException

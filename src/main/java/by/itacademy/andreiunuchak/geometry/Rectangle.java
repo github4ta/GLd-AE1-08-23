@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Rectangle {
     private double width;
-    private double height;
+    private double length;
 
-    public Rectangle(double width, double height) {
+    public Rectangle(double width, double length) {
         setWidth(width);
-        setHeight(height);
+        setLength(length);
     }
 
     public double getWidth() {
@@ -22,33 +22,33 @@ public class Rectangle {
         this.width = width;
     }
 
-    public double getHeight() {
-        return height;
+    public double getLength() {
+        return length;
     }
 
-    public void setHeight(double height) {
-        if (height <= 0) {
-            throw new IllegalArgumentException("Height of the rectangle must be greater than 0");
+    public void setLength(double length) {
+        if (length <= 0) {
+            throw new IllegalArgumentException("Length of the rectangle must be greater than 0");
         }
-        this.height = height;
+        this.length = length;
     }
 
     public boolean equals(Rectangle rectangle) {
         if (this == rectangle) return true;
         if (rectangle == null) return false;
-        return this.width == rectangle.width && this.height == rectangle.height;
+        return this.width == rectangle.width && this.length == rectangle.length;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, height);
+        return Objects.hash(width, length);
     }
 
     @Override
     public String toString() {
         return "Rectangle{" +
                 "width=" + width +
-                ", height=" + height +
+                ", length=" + length +
                 '}';
     }
 }
