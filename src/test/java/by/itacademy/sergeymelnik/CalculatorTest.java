@@ -1,6 +1,6 @@
 package by.itacademy.sergeymelnik;
 
-import by.itacademy.sergeymelnik.lesson240724.Calculator;
+import by.itacademy.sergeymelnik.calculator.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

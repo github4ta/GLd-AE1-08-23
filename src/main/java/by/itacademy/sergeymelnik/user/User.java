@@ -7,12 +7,21 @@ public class User {
     private String password;
 
     public User(String user, String password) {
-
-        if (user == null || password == null){
-            throw  new IllegalArgumentException("User and password can not be empty");
+        if (user == null && password == null) {
+            this.user = "user";
+            this.password = "password";
         }
-        this.user = user;
-        this.password = password;
+        else if (user == null) {
+            this.user = "user";
+        }
+        else if (password == null) {
+            //  throw new IllegalArgumentException("User and password can not be empty");
+            this.password = "password";
+        }
+        else {
+            this.user = user;
+            this.password = password;
+        }
     }
 
     public String getUser() {
@@ -21,8 +30,9 @@ public class User {
 
     public void setUser(String user) {
         if (user == null) {
-            throw new IllegalArgumentException("User field can not be empty");
-        }
+            //throw new IllegalArgumentException("User field can not be empty");
+            this.user = "user";
+        }else
         this.user = user;
     }
 
@@ -31,17 +41,18 @@ public class User {
     }
 
     public void setPassword(String password) {
-        if (password == null){
-            throw  new IllegalArgumentException("Password can not be empty");
-        }
+        if (password == null) {
+            this.password = "password";
+//            throw new IllegalArgumentException("Password can not be empty");
+        }else
         this.password = password;
     }
 
-    @Override
-    public boolean equals(Object o) {
+    //@Override
+    public boolean equals(User o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user1 = (User) o;
+        User user1 = o;
         return Objects.equals(user, user1.user) && Objects.equals(password, user1.password);
     }
 

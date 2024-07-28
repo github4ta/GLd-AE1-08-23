@@ -1,4 +1,4 @@
-package by.itacademy.sergeymelnik.lesson240724;
+package by.itacademy.sergeymelnik.calculator;
 
 public class Main {
     public static void main(String[] args) {
