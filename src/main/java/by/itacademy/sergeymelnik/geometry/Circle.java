@@ -27,7 +27,7 @@ public class Circle {
     public boolean equals(Circle o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Circle circle = (Circle) o;
+        Circle circle = o;
         return radius == circle.radius;
     }
 
