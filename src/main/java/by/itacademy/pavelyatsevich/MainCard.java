@@ -11,7 +11,7 @@ public class MainCard {
         System.out.println();
 
         ArrayList<Card> cards = new ArrayList<>();
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 30; i++) {
             cards.add(Cards.generateRandomCard());
         }
 
@@ -23,10 +23,21 @@ public class MainCard {
         System.out.println();
         System.out.println("Changing cards expiredDate");
         System.out.println();
-
+        int k = 0;
+        int y = 20;
         for (int i = 0; i < cards.size(); i++) {
             Card card = cards.get(i);
-            card.setExpiredDate("0" + i + "/2" + i);
+            if (k < 10) {
+                card.setExpiredDate("0" + k + "/" + y);
+            }
+            if (k >= 10) {
+                card.setExpiredDate(k + "/" + y);
+            }
+            if (k == 12) {
+                k = 0;
+            }
+            k++;
+            y++;
             System.out.println(card);
             System.out.println("Card is valid - " + Cards.isValid(card));
         }
