@@ -10,6 +10,7 @@ public class Cards {
     private static final Faker FAKER = new Faker();
     private static final String[] MONTH = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
     private static final String[] YEARS = {"24", "25", "26"};
+    private static final String MONTH_ADN_YEAR_REGEX = "[0-1][0-9]/[0-9][0-9]";
 
     public static Card generateRandomCard() {
         String cardNumber = generateRandomCardNumber();
@@ -18,18 +19,17 @@ public class Cards {
         return new Card(cardNumber, expiredDate, holder);
     }
 
-    public static boolean isValid(Card card) {
-        String monthAdnYearRegex = "[0-1][0-9]/[0-9][0-9]";
-
-        if (card.getExpiredDate().matches(monthAdnYearRegex)) {
+    public static boolean isValid(Card card) throws NumberFormatException {
+        if (card.getExpiredDate().matches(MONTH_ADN_YEAR_REGEX)) {
             String[] cardMonthAndYear = getCardMonthAndYear(card);
-            String cardMonth = cardMonthAndYear[0];
-            String cardYear = cardMonthAndYear[1];
-
-            if (Integer.parseInt(cardMonth) >= getCurrentMonthValue()
-                    && Integer.parseInt(cardYear) >= getCurrentYearValue()) {
+            int cardMonth = Integer.parseInt(cardMonthAndYear[0]);
+            int cardYear = Integer.parseInt(cardMonthAndYear[1]);
+            int currentMonthValue = getCurrentMonthValue();
+            int currentYearValue = getCurrentYearValue();
+            if (cardYear > currentYearValue && cardMonth > 0 && cardMonth <=12){
                 return true;
             }
+            return cardYear == currentYearValue && cardMonth >= currentMonthValue && cardMonth <= 12;
         }
         return false;
     }
@@ -39,7 +39,7 @@ public class Cards {
     }
 
     private static String generateRandomCardNumber() {
-        return FAKER.business().creditCardNumber();
+        return FAKER.business().creditCardNumber().replaceAll("-"," ");
     }
 
     private static String generateRandomExpiredDate() {
@@ -77,7 +77,7 @@ public class Cards {
 
     private static int getCurrentYearValue() throws NumberFormatException {
         String currentYear = String.valueOf(LocalDate.now().getYear());
-        currentYear = currentYear.substring(1, 2);
+        currentYear = currentYear.substring(2);
         return Integer.parseInt(currentYear);
     }
 }

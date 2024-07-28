@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class MainCard {
     public static void main(String[] args) {
-        System.out.println("Creating 5 random cards:");
+        System.out.println("Creating 12 random cards:");
         System.out.println();
 
         ArrayList<Card> cards = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 12; i++) {
             cards.add(Cards.generateRandomCard());
         }
 
@@ -26,7 +26,7 @@ public class MainCard {
 
         for (int i = 0; i < cards.size(); i++) {
             Card card = cards.get(i);
-            card.setExpiredDate("1" + i + "/" + "2" + i);
+            card.setExpiredDate("0" + i + "/2" + i);
             System.out.println(card);
             System.out.println("Card is valid - " + Cards.isValid(card));
         }
