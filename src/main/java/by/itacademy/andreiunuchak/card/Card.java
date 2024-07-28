@@ -23,7 +23,7 @@ public class Card {
         if (number == null) {
             throw new NullPointerException();
         }
-        if (number.length() != 16) {
+        if (number.length() != 16 || !isNumberCorrect(number)) {
             throw new IllegalArgumentException("Card number is not correct");
         }
         this.number = number;
@@ -51,18 +51,40 @@ public class Card {
         if (holder == null) {
             throw new NullPointerException();
         }
-        if (holder.isEmpty()) {
+        if (holder.isEmpty() || !isHolderCorrect(holder)) {
             throw new IllegalArgumentException("Holder name is not correct");
         }
         this.holder = holder;
     }
 
+    private boolean isHolderCorrect(String holder) {
+        if (holder.split(" ").length != 2) {
+            return false;
+        }
+        holder = holder.replace(" ", "");
+        for (int i = 0; i < holder.length(); i++) {
+            if (!Character.isAlphabetic(holder.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isNumberCorrect(String number) {
+        for (int i = 0; i < number.length(); i++) {
+            if (!Character.isDigit(number.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private boolean isDateFormatCorrect(String expiredDate) {
-        Pattern pattern = Pattern.compile("[0-9][0-9]+/[0-9][0-9]");
+        Pattern pattern = Pattern.compile("[0-1][0-9]/[0-9][0-9]");
         Matcher mat = pattern.matcher(expiredDate);
         if (mat.matches()) {
             int cardMonth = Integer.parseInt(expiredDate.split("/")[0]);
-            if (cardMonth >=1 && cardMonth <=12){
+            if (cardMonth >= 1 && cardMonth <= 12) {
                 return true;
             }
         }

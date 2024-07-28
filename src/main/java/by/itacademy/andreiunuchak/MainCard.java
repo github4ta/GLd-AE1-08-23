@@ -22,26 +22,44 @@ public class MainCard {
         print(card3);
 
         try {
-            Card card4 = new Card("1324", "10/24", "Mr.Error"); // throws IllegalArgumentException
-        }catch (Exception e){
+            Card card4 = new Card("1324", "10/24", "Mister Error"); // throws IllegalArgumentException
+        } catch (Exception e) {
             System.out.println(e);
         }
 
         try {
-            Card card4 = new Card("1324567890123456", "10/2024", "Mr.Error"); // throws IllegalArgumentException
-        }catch (Exception e){
+            Card card4 = new Card("1324567890123456", "10/2024", "Mister Error"); // throws IllegalArgumentException
+        } catch (Exception e) {
             System.out.println(e);
         }
 
         try {
             Card card4 = new Card("1324567890123456", "10/24", ""); // throws IllegalArgumentException
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 
         try {
             Card card4 = new Card(null, null, null); // throws NullPointerException
-        }catch (Exception e){
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+            Card card4 = new Card("ABCDEFGHIJKLMNOP", "07/26", "Mister Error"); // throws NullPointerException
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+            Card card4 = new Card("1324567890123456", "07/26", "MisterError"); // throws NullPointerException
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+            Card card4 = new Card("1324567890123456", "07/26", "M1st3r 3rr0r"); // throws NullPointerException
+        } catch (Exception e) {
             System.out.println(e);
         }
 
