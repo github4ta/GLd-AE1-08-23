@@ -26,7 +26,7 @@ public class Cards {
             int cardYear = Integer.parseInt(cardMonthAndYear[1]);
             int currentMonthValue = getCurrentMonthValue();
             int currentYearValue = getCurrentYearValue();
-            if (cardYear > currentYearValue && cardMonth > 0 && cardMonth <=12){
+            if (cardYear > currentYearValue && cardMonth > 0 && cardMonth <= 12) {
                 return true;
             }
             return cardYear == currentYearValue && cardMonth >= currentMonthValue && cardMonth <= 12;
@@ -39,36 +39,57 @@ public class Cards {
     }
 
     private static String generateRandomCardNumber() {
-        return FAKER.business().creditCardNumber().replaceAll("-"," ");
+        String generatedCardNumber = FAKER.business().creditCardNumber().replaceAll("-", " ");
+        while (generatedCardNumber.length() != 19) {
+            generatedCardNumber = FAKER.business().creditCardNumber().replaceAll("-", " ");
+        }
+        return generatedCardNumber;
     }
 
     private static String generateRandomExpiredDate() {
-        return generateRandomMonth() + "/" + generateRandomYear();
+        String generatedYear = generateRandomYear();
+        String[] generatedMonthAndYear = generateRandomMonth(generatedYear);
+        return generatedMonthAndYear[0] + "/" + generatedMonthAndYear[1];
     }
 
     private static String generateRandomHolder() {
         return FAKER.name().firstName().toUpperCase() + " " + FAKER.name().lastName().toUpperCase();
     }
 
-    private static String generateRandomMonth() {
-        return getMonthWithVerification();
+    private static String[] generateRandomMonth(String randomYear) {
+        return getMonthWithVerification(randomYear);
     }
 
     private static String generateRandomYear() {
         return YEARS[getRandomArrayPosition(YEARS)];
     }
 
-    private static String getMonthWithVerification() throws NumberFormatException {
+    private static String[] getMonthWithVerification(String randomYear) throws NumberFormatException {
+        int generatedYear = Integer.parseInt(randomYear);
         String month = MONTH[getRandomArrayPosition(MONTH)];
         int currentMonthValue = getCurrentMonthValue();
-        while (Integer.parseInt(month) <= currentMonthValue) {
-            month = generateRandomMonth();
+        int currentYearValue = getCurrentYearValue();
+
+        if (generatedYear > currentYearValue) {
+            return new String[]{month, String.valueOf(generatedYear)};
         }
-        return month;
+
+        if (generatedYear == currentYearValue && currentMonthValue == 12) {
+            generatedYear += 1;
+            return new String[]{month, String.valueOf(generatedYear)};
+        }
+
+        if (generatedYear == currentYearValue && currentMonthValue < 12) {
+            while (Integer.parseInt(month) <= currentMonthValue) {
+                month = MONTH[getRandomArrayPosition(MONTH)];
+            }
+            return new String[]{month, String.valueOf(generatedYear)};
+        }
+        return new String[]{"00","00"};
     }
 
     private static int getRandomArrayPosition(String[] arr) {
-        return new Random().nextInt(arr.length);
+        return new Random().ints(0,arr.length).findFirst().getAsInt();
     }
 
     private static int getCurrentMonthValue() {

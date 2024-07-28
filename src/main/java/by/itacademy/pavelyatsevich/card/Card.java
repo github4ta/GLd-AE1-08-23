@@ -9,9 +9,9 @@ public class Card {
     private String holder;
 
     public Card(String number, String expiredDate, String holder) {
-        this.number = number;
-        this.expiredDate = expiredDate;
-        this.holder = holder;
+        setNumber(number);
+        setExpiredDate(expiredDate);
+        setHolder(holder);
     }
 
     public String getNumber() {
@@ -19,6 +19,7 @@ public class Card {
     }
 
     public void setNumber(String number) {
+        cardNumberVerification(number);
         this.number = number;
     }
 
@@ -27,6 +28,7 @@ public class Card {
     }
 
     public void setExpiredDate(String expiredDate) {
+        expiredDateVerification(expiredDate);
         this.expiredDate = expiredDate;
     }
 
@@ -35,6 +37,7 @@ public class Card {
     }
 
     public void setHolder(String holder) {
+        holderVerification(holder);
         this.holder = holder;
     }
 
@@ -61,5 +64,34 @@ public class Card {
                 ", expiredDate='" + expiredDate + '\'' +
                 ", holder='" + holder + '\'' +
                 '}';
+    }
+
+    private static void cardNumberVerification(String number) {
+        if (number == null) {
+            throw new NullPointerException();
+        }
+        if (number.length() != 19) {
+            throw new IllegalArgumentException("Incorrect data! Card number - " + number);
+        }
+    }
+
+    private static void expiredDateVerification(String expiredDate) {
+        if (expiredDate == null) {
+            throw new NullPointerException();
+        }
+        String monthAdnYearRegex = "[0-1][0-9]/[0-9][0-9]";
+        if (!expiredDate.matches(monthAdnYearRegex) || expiredDate.startsWith("00/00")) {
+            throw new IllegalArgumentException("Incorrect data! Expired date - " + expiredDate);
+        }
+    }
+
+    private static void holderVerification(String holder) {
+        if (holder == null) {
+            throw new NullPointerException();
+        }
+        String holderRegex = "/^[a-z ,.'-]+$/i";
+        if (holder.isEmpty() || holder.matches(holderRegex)) {
+            throw new IllegalArgumentException("Incorrect data! Holder - " + holder);
+        }
     }
 }
