@@ -1,4 +1,7 @@
-package by.itacademy.aksanabazhenava.geometry;
+package by.itacademy.aksanabazhenava;
+
+import by.itacademy.aksanabazhenava.geometry.Circle;
+import by.itacademy.aksanabazhenava.geometry.Rectangle;
 
 public class MainGeometry {
     public static void main(String[] args) {

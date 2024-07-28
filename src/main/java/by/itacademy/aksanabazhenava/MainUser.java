@@ -1,4 +1,6 @@
-package by.itacademy.aksanabazhenava.user;
+package by.itacademy.aksanabazhenava;
+
+import by.itacademy.aksanabazhenava.user.Users;
 
 public class MainUser {
     public static void main(String[] args) {
