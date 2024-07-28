@@ -46,19 +46,19 @@ public class MainCard {
         }
 
         try {
-            Card card4 = new Card("ABCDEFGHIJKLMNOP", "07/26", "Mister Error"); // throws NullPointerException
+            Card card4 = new Card("ABCDEFGHIJKLMNOP", "07/26", "Mister Error"); // throws IllegalArgumentException
         } catch (Exception e) {
             System.out.println(e);
         }
 
         try {
-            Card card4 = new Card("1324567890123456", "07/26", "MisterError"); // throws NullPointerException
+            Card card4 = new Card("1324567890123456", "07/26", "MisterError"); // throws IllegalArgumentException
         } catch (Exception e) {
             System.out.println(e);
         }
 
         try {
-            Card card4 = new Card("1324567890123456", "07/26", "M1st3r 3rr0r"); // throws NullPointerException
+            Card card4 = new Card("1324567890123456", "07/26", "M1st3r 3rr0r"); // throws IllegalArgumentException
         } catch (Exception e) {
             System.out.println(e);
         }
