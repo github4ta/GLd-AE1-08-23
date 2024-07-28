@@ -1,4 +1,4 @@
-package by.itacademy.sergeymelnik;
+package by.itacademy.sergeymelnik.lesson240724;
 
 public class Main {
     public static void main(String[] args) {

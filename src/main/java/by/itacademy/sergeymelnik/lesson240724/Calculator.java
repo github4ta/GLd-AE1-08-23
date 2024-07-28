@@ -1,4 +1,4 @@
-package by.itacademy.sergeymelnik;
+package by.itacademy.sergeymelnik.lesson240724;
 
 public class Calculator {
     public static int add(int a, int b){
