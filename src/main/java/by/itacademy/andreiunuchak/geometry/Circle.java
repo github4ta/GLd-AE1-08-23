@@ -17,7 +17,7 @@ public class Circle {
     }
 
     public void setRadius(double radius) {
-        if(radius<0){
+        if (radius < 0) {
             throw new IllegalArgumentException("Radius can't be less than 0");
         }
         this.radius = radius;

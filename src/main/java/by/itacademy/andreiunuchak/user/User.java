@@ -18,8 +18,8 @@ public class User {
     }
 
     public void setLogin(String login) {
-        if(login==null) throw new NullPointerException();
-        if(!isEmailValid(login)) throw new IllegalArgumentException("Email address is not valid.");
+        if (login == null) throw new NullPointerException();
+        if (!isEmailValid(login)) throw new IllegalArgumentException("Email address is not valid.");
         this.login = login;
     }
 
@@ -28,8 +28,8 @@ public class User {
     }
 
     public void setPassword(String password) {
-        if(password==null) throw new NullPointerException();
-        if(password.isEmpty()) throw new IllegalArgumentException("Password can not be empty");
+        if (password == null) throw new NullPointerException();
+        if (password.isEmpty()) throw new IllegalArgumentException("Password can not be empty");
         this.password = password;
     }
 
@@ -52,7 +52,7 @@ public class User {
                 '}';
     }
 
-    private boolean isEmailValid(String login){
+    private boolean isEmailValid(String login) {
         Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
         Matcher mat = pattern.matcher(login);
         return mat.matches();
