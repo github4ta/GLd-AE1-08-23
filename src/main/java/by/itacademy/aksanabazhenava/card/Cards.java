@@ -1,5 +1,7 @@
 package by.itacademy.aksanabazhenava.card;
 
+import com.github.javafaker.Faker;
+
 import java.time.LocalDate;
 import java.util.Random;
 
@@ -12,7 +14,7 @@ public class Cards {
         return new Card(cardNumber, expiredDate, holder);
     }
 
-       public static String generateRandomNumberCard() {
+    public static String generateRandomNumberCard() {
         StringBuilder number = new StringBuilder();
         Random random = new Random();
         for (int i = 0; i < 16; i++) {
@@ -21,7 +23,8 @@ public class Cards {
         }
         return number.toString();
     }
-    public static LocalDate generateRandomExpiredDateCard(){
+
+    public static LocalDate generateRandomExpiredDateCard() {
         Random random = new Random();
         int year = LocalDate.now().getYear() - random.nextInt(10);
 
@@ -29,12 +32,11 @@ public class Cards {
         int day = random.nextInt(28) + 1;
         return LocalDate.of(year, month, day);
     }
+
     public static String generateRandomHolderCard() {
-        String[] firstNames = {"Ivan", "Alla", "Micha", "Eva", "Daniil"};
-        String[] lastNames = {"Ivanenko", "Butenko", "Grigorenko", "Lee", "Smitt"};
-        Random random = new Random();
-        String firstName = firstNames[random.nextInt(firstNames.length)];
-        String lastName = lastNames[random.nextInt(lastNames.length)];
+        Faker faker = new Faker();
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
         return firstName + " " + lastName;
     }
 
