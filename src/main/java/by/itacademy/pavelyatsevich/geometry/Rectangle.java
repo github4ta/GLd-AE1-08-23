@@ -1,8 +1,7 @@
 package by.itacademy.pavelyatsevich.geometry;
 
-import com.google.common.hash.Hashing;
-
-import java.util.Objects;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Rectangle {
     private int length;
@@ -35,19 +34,20 @@ public class Rectangle {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
+
         if (o == null || getClass() != o.getClass()) return false;
+
         Rectangle rectangle = (Rectangle) o;
-        return Double.compare(rectangle.length, length) == 0 && Double.compare(rectangle.width, width) == 0;
+
+        return new EqualsBuilder().append(length, rectangle.length).append(width, rectangle.width).isEquals();
     }
 
     @Override
     public int hashCode() {
-        return Hashing.sha512()
-                .newHasher()
-                .putInt(length)
-                .putInt(width)
-                .hash()
-                .asInt();
+        return new HashCodeBuilder(17, 37)
+                .append(length)
+                .append(width)
+                .toHashCode();
     }
 
     @Override
