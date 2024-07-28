@@ -31,12 +31,10 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(login, user.login) && Objects.equals(password, user.password);
+    public boolean equals(User user) {
+        if (this == user) return true;
+        if (user == null) return false;
+        return this.login.equals(user.login) && this.password.equals(user.password);
     }
 
     @Override
