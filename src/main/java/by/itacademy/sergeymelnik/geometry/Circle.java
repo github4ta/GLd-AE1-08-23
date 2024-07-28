@@ -3,7 +3,7 @@ package by.itacademy.sergeymelnik.geometry;
 import java.util.Objects;
 
 public class Circle {
-    int radius;
+   private int radius;
 
     public Circle() {
     }
@@ -23,8 +23,8 @@ public class Circle {
         this.radius = radius;
     }
 
-    @Override
-    public boolean equals(Object o) {
+    //@Override
+    public boolean equals(Circle o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circle circle = (Circle) o;
@@ -33,7 +33,7 @@ public class Circle {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(radius);
+        return (int) Math.pow(radius, 3);
     }
 
     @Override

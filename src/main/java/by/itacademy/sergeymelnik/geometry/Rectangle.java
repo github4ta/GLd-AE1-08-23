@@ -3,13 +3,10 @@ package by.itacademy.sergeymelnik.geometry;
 import java.util.Objects;
 
 public class Rectangle {
-    int width;
-    int length;
+    private int width;
+    private int length;
 
-    public Rectangle() {
-    }
-
-    public Rectangle(int width, int length) {
+     public Rectangle(int width, int length) {
         if (width <= 0 || length <= 0){
             throw new IllegalArgumentException("width and length can not be lower or equal zero ");
         }
@@ -39,8 +36,8 @@ public class Rectangle {
         this.length = length;
     }
 
-    @Override
-    public boolean equals(Object o) {
+    //@Override
+    public boolean equals(Rectangle o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rectangle rectangle = (Rectangle) o;
@@ -49,8 +46,10 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length);
+        return (int)Math.pow(width*length, 3);
     }
+
+
 
     @Override
     public String toString() {
