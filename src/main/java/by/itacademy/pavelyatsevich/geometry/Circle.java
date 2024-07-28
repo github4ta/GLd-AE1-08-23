@@ -1,6 +1,6 @@
 package by.itacademy.pavelyatsevich.geometry;
 
-import com.google.common.hash.Hashing;
+import com.google.common.base.Objects;
 
 public class Circle {
     private int radius;
@@ -25,16 +25,12 @@ public class Circle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circle circle = (Circle) o;
-        return Double.compare(circle.radius, radius) == 0;
+        return radius == circle.radius;
     }
 
     @Override
     public int hashCode() {
-        return Hashing.sha512()
-                .newHasher()
-                .putInt(radius)
-                .hash()
-                .asInt();
+        return Objects.hashCode(radius);
     }
 
     @Override
