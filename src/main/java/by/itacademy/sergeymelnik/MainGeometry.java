@@ -1,4 +1,4 @@
-package by.itacademy;
+package by.itacademy.sergeymelnik;
 
 import by.itacademy.sergeymelnik.geometry.Circle;
 import by.itacademy.sergeymelnik.geometry.Rectangle;
