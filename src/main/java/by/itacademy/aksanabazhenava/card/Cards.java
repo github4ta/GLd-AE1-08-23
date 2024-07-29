@@ -5,12 +5,13 @@ import com.github.javafaker.Faker;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
+//import org.joda.time.LocalDate;
 
 public class Cards {
 
     public static Card generateRandomCard() {
         String cardNumber = generateRandomNumberCard();
-        String expiredDate = String.valueOf(generateRandomExpiredDateCard());
+        String expiredDate = generateRandomExpiredDateCard();
         String holder = generateRandomHolderCard();
         return new Card(cardNumber, expiredDate, holder);
     }
@@ -27,13 +28,14 @@ public class Cards {
 
     public static String generateRandomExpiredDateCard() {
         Random random = new Random();
-        String[] years = {"24", "25", "26"};
-        String[] monthes = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+        String [] years = {"24", "25", "26"};
         int indexYears = new Random().nextInt(years.length);
         String year = years[indexYears];
         int month = random.nextInt(12) + 1;
         int day = random.nextInt(28) + 1;
-        String format = LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy-MM-dd"));
+        LocalDate currentMonth = LocalDate.now();
+        LocalDate nextMonth = currentMonth.plusMonths(1);
+        String format = LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy/MM/dd"));
         return format;
     }
 
@@ -45,6 +47,7 @@ public class Cards {
     }
 
     public static boolean isValid(Card card) {
+
 
         return false;
     }
