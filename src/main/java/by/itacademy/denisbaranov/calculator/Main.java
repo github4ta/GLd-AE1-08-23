@@ -1,6 +1,4 @@
-package by.itacademy.denisbaranov;
-
-import by.itacademy.denisbaranov.calculator.Calculator;
+package by.itacademy.denisbaranov.calculator;
 
 public class Main {
     public static void main(String[] args) {
