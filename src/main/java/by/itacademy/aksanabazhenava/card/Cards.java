@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
-//import org.joda.time.LocalDate;
 
 public class Cards {
 
@@ -38,8 +37,7 @@ public class Cards {
         while (month <= currMonth) {
             month = random.nextInt(12) + 1;
         }
-        String format = LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy/MM/dd"));
-        return format;
+        return LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy/MM/dd"));
     }
 
     public static String generateRandomHolderCard() {
@@ -51,7 +49,10 @@ public class Cards {
 
     public static boolean isValid(Card card) {
 
-
         return false;
     }
 }
+
+
+
+
