@@ -7,13 +7,7 @@
     <groupId>by-itAcademy</groupId>
     <artifactId>GLd-AE1-08-23</artifactId>
     <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
