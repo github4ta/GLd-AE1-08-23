@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class CalculatorTest {
 
     @Test
-    public void add() {
+    public void testAdd() {
         int value1 = 10;
         int value2 = 2;
         int validResult = 12;
