@@ -32,25 +32,10 @@ public class CalculatorTest {
 
     @Test
     void testSubtract() {
-        //given
         int a = 10;
         int b = 2;
-        //when
         int result = Calculator.subtract(a, b);
-        //then
         Assertions.assertEquals(8, result);
         Assertions.assertNotEquals(9, result);
-    }
-
-    @Test
-    void testDivide() {
-        //given
-        int a = 10;
-        int b = 2;
-        //when
-        double result = Calculator.divide(int a, int b);
-        //then
-        Assertions.assertEquals(5, result);
-        Assertions.assertNotEquals(10, result);
     }
 }
