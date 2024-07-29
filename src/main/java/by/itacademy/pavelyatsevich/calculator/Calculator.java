@@ -20,11 +20,12 @@ public class Calculator {
     public static double divide(int a, int b) {
         if (b != 0) {
             return (double) a / b;
-        }else {
+        } else {
             System.out.println("Division by zero!");
             return 0;
         }
     }
+
     public static double add(double a, double b) {
         return a + b;
     }
@@ -40,7 +41,7 @@ public class Calculator {
     public static double divide(double a, double b) {
         if (b != 0) {
             return a / b;
-        }else {
+        } else {
             System.out.println("Division by zero!");
             return 0;
         }
