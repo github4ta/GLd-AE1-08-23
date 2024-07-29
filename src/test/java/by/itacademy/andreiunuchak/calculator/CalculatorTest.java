@@ -9,8 +9,8 @@ public class CalculatorTest {
         int number1 = 1;
         int number2 = 2;
         int expected = 3;
-        int result = Calculator.add(number1,number2);
-        Assertions.assertEquals(expected, result);
+        int actual = Calculator.add(number1,number2);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -18,8 +18,8 @@ public class CalculatorTest {
         int number1 = -1;
         int number2 = -2;
         int expected = -3;
-        int result = Calculator.add(number1,number2);
-        Assertions.assertEquals(expected, result);
+        int actual = Calculator.add(number1,number2);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -27,8 +27,8 @@ public class CalculatorTest {
         int number1 = -1;
         int number2 = 2;
         int expected = 1;
-        int result = Calculator.add(number1,number2);
-        Assertions.assertEquals(expected, result);
+        int actual = Calculator.add(number1,number2);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class CalculatorTest {
         int number1 = Integer.MAX_VALUE;
         int number2 = Integer.MIN_VALUE;
         int expected = -1;
-        int result = Calculator.add(number1,number2);
-        Assertions.assertEquals(expected, result);
+        int actual = Calculator.add(number1,number2);
+        Assertions.assertEquals(expected, actual);
     }
 }
