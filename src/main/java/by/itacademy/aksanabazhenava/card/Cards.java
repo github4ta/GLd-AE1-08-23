@@ -28,13 +28,16 @@ public class Cards {
 
     public static String generateRandomExpiredDateCard() {
         Random random = new Random();
-        String [] years = {"24", "25", "26"};
+        String[] years = {"24", "25", "26"};
         int indexYears = new Random().nextInt(years.length);
         String year = years[indexYears];
         int month = random.nextInt(12) + 1;
         int day = random.nextInt(28) + 1;
         LocalDate currentMonth = LocalDate.now();
-        LocalDate nextMonth = currentMonth.plusMonths(1);
+        int currMonth = currentMonth.getMonthValue();
+        while (month <= currMonth) {
+            month = random.nextInt(12) + 1;
+        }
         String format = LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy/MM/dd"));
         return format;
     }
