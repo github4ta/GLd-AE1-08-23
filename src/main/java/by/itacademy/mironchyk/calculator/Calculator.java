@@ -1,4 +1,4 @@
-package by.itacademy.mironchyk;
+package by.itacademy.mironchyk.calculator;
 
 public class Calculator {
     public static int add(int a, int b) {

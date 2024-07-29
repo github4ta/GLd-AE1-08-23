@@ -1,5 +1,7 @@
 package by.itacademy.mironchyk;
 
+import by.itacademy.mironchyk.calculator.Calculator;
+
 public class Main {
     public static void main(String[] args) {
         int a = 2;

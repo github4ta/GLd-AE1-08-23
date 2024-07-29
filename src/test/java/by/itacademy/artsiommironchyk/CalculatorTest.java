@@ -1,6 +1,6 @@
 package by.itacademy.artsiommironchyk;
 
-import by.itacademy.mironchyk.Calculator;
+import by.itacademy.mironchyk.calculator.Calculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
