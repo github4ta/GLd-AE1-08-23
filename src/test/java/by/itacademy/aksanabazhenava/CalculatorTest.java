@@ -34,7 +34,7 @@ public class CalculatorTest {
         int invalidB = 50;
 
         //2. Вызвать код, который хотим протестировать
-        int result = Calculator.deduction(4, 90);
+        int result = Calculator.substract(4, 90);
         Assertions.assertEquals(-86, result);
     }
 
