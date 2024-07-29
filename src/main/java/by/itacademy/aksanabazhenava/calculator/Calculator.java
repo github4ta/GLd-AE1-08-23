@@ -1,4 +1,4 @@
-package by.itacademy.aksanabazhenava;
+package by.itacademy.aksanabazhenava.calculator;
 
 public class Calculator {
 

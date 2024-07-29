@@ -1,5 +1,7 @@
 package by.itacademy.aksanabazhenava;
 
+import by.itacademy.aksanabazhenava.calculator.Calculator;
+
 public class Main {
     public static void main(String[] args) {
         int a = 574;
