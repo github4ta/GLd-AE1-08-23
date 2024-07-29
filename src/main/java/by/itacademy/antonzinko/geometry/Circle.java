@@ -3,13 +3,13 @@ package by.itacademy.antonzinko.geometry;
 import java.util.Objects;
 
 public class Circle {
-    double radius;
+    private double radius;
 
     public Circle() {
     }
 
-    public static double radius(double diameter, double a) {
-        return (diameter / a);
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
     public void setRadius(double radius) {
@@ -20,9 +20,9 @@ public class Circle {
         return radius;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Circle o) {
+        if(o == null || getClass() != o.getClass()) return false;
+        return this.radius == o.radius;
     }
 
     @Override
