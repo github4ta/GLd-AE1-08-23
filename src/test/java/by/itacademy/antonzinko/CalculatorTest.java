@@ -13,4 +13,14 @@ public class CalculatorTest {
         int result = Calculator.fold(a, b);
         Assertions.assertEquals(5, result);
     }
+
+    @Test
+    public void testMultiply() {
+        int a = 1;
+        int b = 2;
+        int result = Calculator.multiply(a, b);
+        Assertions.assertEquals(2, result, "Ваш метод имеет некорректные данные!");
+        Assertions.assertNotEquals(3, result);
+    }
+
 }
