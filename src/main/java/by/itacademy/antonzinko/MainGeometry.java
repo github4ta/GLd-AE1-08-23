@@ -5,14 +5,18 @@ import by.itacademy.antonzinko.geometry.Rectangle;
 
 public class MainGeometry {
     public static void main(String[] args) {
-        double diameter = 2;
-        double a = 2;
-        System.out.println("Радиус диаметра равен " + (Circle.radius(diameter, a)));
-        double l1 = 1.1;
-        double l2 = 2.2;
-        System.out.println("Длина прямоугольника равна " + (Rectangle.length(l1, l2)));
-        double s = 3;
-        double b = 2;
-        System.out.println("Ширина прямоугольника равна " + (Rectangle.width(s, b)));
+        Circle c1 = new Circle(1);
+        Circle c2 = new Circle();
+        c2.setRadius(1);
+        boolean isEquals = c1.equals(c2);
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(isEquals);
+        Rectangle r1 = new Rectangle(1, 2.2);
+        Rectangle r2 = new Rectangle();
+        r2.setLength(1);
+        r2.setWidth(2.2);
+        boolean isEquals2 = r1.equals(r2);
+        System.out.println(isEquals2);
     }
 }
