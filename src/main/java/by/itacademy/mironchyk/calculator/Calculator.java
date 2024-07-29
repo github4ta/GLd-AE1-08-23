@@ -13,6 +13,7 @@ public class Calculator {
         return (a - b);
     }
 
+    // добавил коментарий
     public static int divide(int a, int b) {
         if (b == 0) {
             throw new IllegalArgumentException("Division by zero is not allowed");
@@ -24,3 +25,4 @@ public class Calculator {
         return a - b;
     }
 }
+
