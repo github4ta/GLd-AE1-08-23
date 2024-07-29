@@ -1,18 +1,15 @@
 package by.itacademy.antonzinko.geometry;
 
 public class Rectangle {
-    double length;
-    double width;
+    private double length;
+    private double width;
 
     public Rectangle() {
     }
 
-    public static double length(double l1, double l2) {
-        return (l1 + l2);
-    }
-
-    public static double width(double s, double b) {
-        return (s / b);
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
     }
 
     public void setLength(double length) {
@@ -31,9 +28,9 @@ public class Rectangle {
         return width;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Rectangle obj) {
+        if(obj == null || getClass() != obj.getClass()) return false;
+        return this.length == obj.length && this.width == obj.width;
     }
 
     @Override
