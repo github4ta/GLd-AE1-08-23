@@ -1,4 +1,4 @@
-package by.itacademy.denisbaranov;
+package by.itacademy.denisbaranov.calculator;
 
 public class Calculator {
     public static int sum(int a, int b) {
