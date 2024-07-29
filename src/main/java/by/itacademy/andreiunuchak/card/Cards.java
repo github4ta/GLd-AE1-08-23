@@ -8,7 +8,7 @@ public class Cards {
     public static Card generateRandomCard() {
         String number = "";
         for (int i = 0; i < 16; i++) {
-            number += String.valueOf(new Random().nextInt(9));
+            number += String.valueOf(new Random().nextInt(10));
         }
         int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
         int generatedMonth = currentMonth + 1;
@@ -24,7 +24,7 @@ public class Cards {
     }
 
     public static boolean isValid(Card card) {
-        if (card.getExpiredDate().matches("[0-9][0-9]+/[0-9][0-9]")) {
+        if (card.getExpiredDate().matches("[0-1][0-9]+/[0-9][0-9]")) {
             int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
             int currentYear = Calendar.getInstance().get(Calendar.YEAR) % 100;
             int cardMonth = Integer.parseInt(card.getExpiredDate().split("/")[0]);
