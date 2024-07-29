@@ -13,6 +13,25 @@ class CalculatorTest {
         int invalidResult = 11;
         int result = Calculator.add(value1, value2);
         Assertions.assertEquals(validResult, result);
-        Assertions.assertNotEquals(invalidResult, result);
+        //+ -
+        value1 = 11;
+        value2 = -9;
+        validResult = 2;
+        Assertions.assertEquals(validResult, Calculator.add(value1, value2));
+        //- +
+        value1 = -13;
+        value2 = 5;
+        validResult = -8;
+        Assertions.assertEquals(validResult, Calculator.add(value1, value2));
+        //- -
+        value1 = -11;
+        value2 = -9;
+        validResult = -20;
+        Assertions.assertEquals(validResult, Calculator.add(value1, value2));
+        //0 0
+        value1 = 0;
+        value2 = 0;
+        validResult = 0;
+        Assertions.assertEquals(validResult, Calculator.add(value1, value2));
     }
 }
