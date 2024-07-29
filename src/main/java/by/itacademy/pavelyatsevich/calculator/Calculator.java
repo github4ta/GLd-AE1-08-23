@@ -47,6 +47,10 @@ public class Calculator {
         }
     }
 
+    public static double exponentiation(double number, double degree){
+        return Math.pow(number,degree);
+    }
+
     public static int getNumber() {
         while (true) {
             if (scanner.hasNextInt()) {
