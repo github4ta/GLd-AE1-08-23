@@ -1,11 +1,8 @@
 package by.itacademy.andreiunuchak.card;
 
 import com.github.javafaker.Faker;
-
 import java.util.Calendar;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Cards {
     public static Card generateRandomCard() {
@@ -27,9 +24,7 @@ public class Cards {
     }
 
     public static boolean isValid(Card card) {
-        Pattern pattern = Pattern.compile("[0-9][0-9]+/[0-9][0-9]");
-        Matcher mat = pattern.matcher(card.getExpiredDate());
-        if (mat.matches()) {
+        if (card.getExpiredDate().matches("[0-9][0-9]+/[0-9][0-9]")) {
             int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
             int currentYear = Calendar.getInstance().get(Calendar.YEAR) % 100;
             int cardMonth = Integer.parseInt(card.getExpiredDate().split("/")[0]);

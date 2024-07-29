@@ -1,8 +1,6 @@
 package by.itacademy.andreiunuchak.card;
 
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Card {
     private String number;
@@ -61,28 +59,15 @@ public class Card {
         if (holder.split(" ").length != 2) {
             return false;
         }
-        holder = holder.replace(" ", "");
-        for (int i = 0; i < holder.length(); i++) {
-            if (!Character.isAlphabetic(holder.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
+        return holder.matches("[a-zA-Zà-ÿÀ-ß'-\\.\s]+");
     }
 
     private boolean isNumberCorrect(String number) {
-        for (int i = 0; i < number.length(); i++) {
-            if (!Character.isDigit(number.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
+        return number.matches("[0-9]".repeat(16));
     }
 
     private boolean isDateFormatCorrect(String expiredDate) {
-        Pattern pattern = Pattern.compile("[0-1][0-9]/[0-9][0-9]");
-        Matcher mat = pattern.matcher(expiredDate);
-        if (mat.matches()) {
+        if (expiredDate.matches("[0-1][0-9]/[0-9][0-9]")) {
             int cardMonth = Integer.parseInt(expiredDate.split("/")[0]);
             if (cardMonth >= 1 && cardMonth <= 12) {
                 return true;
