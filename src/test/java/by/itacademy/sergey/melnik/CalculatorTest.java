@@ -24,4 +24,15 @@ public class CalculatorTest {
 
     }
 
+
+    @Test
+    public void testSubtract(){
+        int a = 6;
+        int b = 5;
+        int calc = Calculator.subtract(a, b);
+        Assertions.assertEquals(1,calc);
+
+    }
+
+
 }
