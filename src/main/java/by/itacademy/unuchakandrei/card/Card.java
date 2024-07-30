@@ -8,20 +8,42 @@ public class Card {
     private String cardNumber;
 
     public Card(String cardHolder, String expiredDate, String cardNumber) {
-        this.cardHolder = cardHolder;
-        this.expiredDate = expiredDate;
-        this.cardNumber = cardNumber;
+        setCardHolder(cardHolder);
+        setExpiredDate(expiredDate);
+        setCardNumber(cardNumber);
     }
 
     public void setCardHolder(String cardHolder) {
+        if (cardHolder == null) {
+            throw new NullPointerException();
+        }
+        if (cardHolder.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         this.cardHolder = cardHolder;
     }
 
     public void setExpiredDate(String expiredDate) {
+        if (expiredDate == null) {
+            throw new NullPointerException();
+        }
+        if (!expiredDate.matches("[0-1][0-9]/[0-9][0-9]")) {
+            throw new IllegalArgumentException();
+        }
+        int month = Integer.parseInt(expiredDate.split("/")[0]);
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException();
+        }
         this.expiredDate = expiredDate;
     }
 
     public void setCardNumber(String cardNumber) {
+        if (cardNumber == null) {
+            throw new NullPointerException();
+        }
+        if (!cardNumber.matches("[0-9]".repeat(16))) {
+            throw new IllegalArgumentException();
+        }
         this.cardNumber = cardNumber;
     }
 
