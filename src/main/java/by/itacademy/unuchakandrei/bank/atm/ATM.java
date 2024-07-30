@@ -8,20 +8,42 @@ public class ATM {
     private String moneyAmount;
 
     public ATM(String number, String address, String moneyAmount) {
-        this.number = number;
-        this.address = address;
-        this.moneyAmount = moneyAmount;
+        setNumber(number);
+        setAddress(address);
+        setMoneyAmount(moneyAmount);
     }
 
     public void setNumber(String number) {
+        if (number == null) {
+            throw new NullPointerException();
+        }
+        if (number.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         this.number = number;
     }
 
     public void setAddress(String address) {
+        if (address == null) {
+            throw new NullPointerException();
+        }
+        if (address.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
         this.address = address;
     }
 
     public void setMoneyAmount(String moneyAmount) {
+        if (moneyAmount == null) {
+            throw new NullPointerException();
+        }
+        if (moneyAmount.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        String regex = "^\\d*\\.?\\d*$";
+        if (!moneyAmount.matches(regex)) {
+            throw new IllegalArgumentException();
+        }
         this.moneyAmount = moneyAmount;
     }
 
