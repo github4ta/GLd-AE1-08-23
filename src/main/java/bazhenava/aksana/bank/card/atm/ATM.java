@@ -50,4 +50,13 @@ public class ATM {
     public int hashCode() {
         return Objects.hash(number, address, moneyAmount);
     }
+
+    @Override
+    public String toString() {
+        return "ATM{" +
+                "number='" + number + '\'' +
+                ", address='" + address + '\'' +
+                ", moneyAmount='" + moneyAmount + '\'' +
+                '}';
+    }
 }
