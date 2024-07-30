@@ -14,7 +14,7 @@ public class Calculator {
         return multiplaResult;
     }
 
-    public static int deduction(int a, int b){
+    public static int substract(int a, int b){
         return (a - b);
     }
 
