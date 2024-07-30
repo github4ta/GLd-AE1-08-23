@@ -1,7 +1,6 @@
 package by.itacademy.aksanabazhenava.card;
 
 import com.github.javafaker.Faker;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
@@ -37,7 +36,7 @@ public class Cards {
         while (month <= currMonth) {
             month = random.nextInt(12) + 1;
         }
-        return LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy/MM/dd"));
+        return LocalDate.of(Integer.parseInt(year), month, day).format(DateTimeFormatter.ofPattern("yy/MM"));
     }
 
     public static String generateRandomHolderCard() {
