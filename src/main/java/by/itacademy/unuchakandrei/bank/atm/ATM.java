@@ -1,47 +1,45 @@
 package by.itacademy.unuchakandrei.bank.atm;
 
 import java.util.Objects;
+import java.util.Random;
 
 public class ATM {
     private String number;
     private String address;
-    private String moneyAmount;
+    private int moneyAmount;
 
-    public ATM(String number, String address, String moneyAmount) {
+    public ATM(String number, String address, int moneyAmount) {
         setNumber(number);
         setAddress(address);
         setMoneyAmount(moneyAmount);
     }
 
     public void setNumber(String number) {
-        if (number == null) {
-            throw new NullPointerException();
-        }
         if (number.isEmpty()) {
-            throw new IllegalArgumentException();
+            this.number = generateRandomNumber();
+        }else {
+            this.number = number;
         }
-        this.number = number;
+    }
+
+    private String generateRandomNumber() {
+        StringBuilder number = new StringBuilder();
+        for(int i =0 ; i<16; i++){
+            number.append(new Random().nextInt(0, 10));
+        }
+        return number.toString();
     }
 
     public void setAddress(String address) {
-        if (address == null) {
-            throw new NullPointerException();
-        }
         if (address.isEmpty()) {
-            throw new IllegalArgumentException();
+            this.address = "N/A";
+        }else {
+            this.address = address;
         }
-        this.address = address;
     }
 
-    public void setMoneyAmount(String moneyAmount) {
-        if (moneyAmount == null) {
-            throw new NullPointerException();
-        }
-        if (moneyAmount.isEmpty()) {
-            throw new IllegalArgumentException();
-        }
-        String regex = "^\\d*\\.?\\d*$";
-        if (!moneyAmount.matches(regex)) {
+    public void setMoneyAmount(int moneyAmount) {
+        if (moneyAmount < 0) {
             throw new IllegalArgumentException();
         }
         this.moneyAmount = moneyAmount;
@@ -55,14 +53,14 @@ public class ATM {
         return address;
     }
 
-    public String getMoneyAmount() {
+    public int getMoneyAmount() {
         return moneyAmount;
     }
 
     public boolean equals(ATM atm) {
         if (this == atm) return true;
         if (atm == null) return false;
-        return number.equals(atm.number) && address.equals(atm.address) && moneyAmount.equals(atm.moneyAmount);
+        return number.equals(atm.number) && address.equals(atm.address) && moneyAmount ==atm.moneyAmount;
     }
 
     @Override

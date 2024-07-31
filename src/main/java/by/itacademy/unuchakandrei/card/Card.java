@@ -14,19 +14,13 @@ public class Card {
     }
 
     public void setCardHolder(String cardHolder) {
-        if (cardHolder == null) {
-            throw new NullPointerException();
-        }
         if (cardHolder.isEmpty()) {
-            throw new IllegalArgumentException();
+            return;
         }
         this.cardHolder = cardHolder;
     }
 
     public void setExpiredDate(String expiredDate) {
-        if (expiredDate == null) {
-            throw new NullPointerException();
-        }
         if (!expiredDate.matches("[0-1][0-9]/[0-9][0-9]")) {
             throw new IllegalArgumentException();
         }
@@ -38,9 +32,6 @@ public class Card {
     }
 
     public void setCardNumber(String cardNumber) {
-        if (cardNumber == null) {
-            throw new NullPointerException();
-        }
         if (!cardNumber.matches("[0-9]".repeat(16))) {
             throw new IllegalArgumentException();
         }
