@@ -17,14 +17,14 @@ public class ATM {
     public void setNumber(String number) {
         if (number.isEmpty()) {
             this.number = generateRandomNumber();
-        }else {
+        } else {
             this.number = number;
         }
     }
 
     private String generateRandomNumber() {
         StringBuilder number = new StringBuilder();
-        for(int i =0 ; i<16; i++){
+        for (int i = 0; i < 16; i++) {
             number.append(new Random().nextInt(0, 10));
         }
         return number.toString();
@@ -33,7 +33,7 @@ public class ATM {
     public void setAddress(String address) {
         if (address.isEmpty()) {
             this.address = "N/A";
-        }else {
+        } else {
             this.address = address;
         }
     }
@@ -60,7 +60,7 @@ public class ATM {
     public boolean equals(ATM atm) {
         if (this == atm) return true;
         if (atm == null) return false;
-        return number.equals(atm.number) && address.equals(atm.address) && moneyAmount ==atm.moneyAmount;
+        return number.equals(atm.number) && address.equals(atm.address) && moneyAmount == atm.moneyAmount;
     }
 
     @Override
