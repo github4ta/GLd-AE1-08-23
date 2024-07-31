@@ -5,9 +5,9 @@ import java.util.Objects;
 public class ATM {
     private String number;
     private String address;
-    private String moneyAmount;
+    private int moneyAmount;
 
-    public ATM(String number, String address, String moneyAmount) {
+    public ATM(String number, String address, int moneyAmount) {
         this.number = number;
         this.address = address;
         this.moneyAmount = moneyAmount;
@@ -29,11 +29,11 @@ public class ATM {
         this.address = address;
     }
 
-    public String getMoneyAmount() {
+    public int getMoneyAmount() {
         return moneyAmount;
     }
 
-    public void setMoneyAmount(String moneyAmount) {
+    public void setMoneyAmount(int moneyAmount) {
         this.moneyAmount = moneyAmount;
     }
 
@@ -42,7 +42,7 @@ public class ATM {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ATM atm = (ATM) o;
-        return Objects.equals(number, atm.number) && Objects.equals(address, atm.address) && Objects.equals(moneyAmount, atm.moneyAmount);
+        return moneyAmount == atm.moneyAmount && Objects.equals(number, atm.number) && Objects.equals(address, atm.address);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class ATM {
         return "ATM{" +
                 "number='" + number + '\'' +
                 ", address='" + address + '\'' +
-                ", moneyAmount='" + moneyAmount + '\'' +
+                ", moneyAmount=" + moneyAmount +
                 '}';
     }
 }
