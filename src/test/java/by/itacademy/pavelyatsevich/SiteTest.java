@@ -21,12 +21,12 @@ public class SiteTest {
 
     @Test
     public void openSiteTest(){
-        String fieldSiteEndTextXPath = "//a[@class='footer-link']";
-        By fieldSiteEndTextBy = By.xpath(fieldSiteEndTextXPath);
-        WebElement fieldSiteEndTextWebElement = driver.findElement(fieldSiteEndTextBy);
+        String fieldSiteFooterTextXPath = "//span[contains(text(), 'Taplink.ru')]";
+        By fieldSiteFooterTextBy = By.xpath(fieldSiteFooterTextXPath);
+        WebElement fieldSiteFooterTextWebElement = driver.findElement(fieldSiteFooterTextBy);
 
-        String actualTextMessage = fieldSiteEndTextWebElement.getText();
-        String expectedTextMessage = "Сделано на Taplink.ru";
+        String actualTextMessage = fieldSiteFooterTextWebElement.getText();
+        String expectedTextMessage = "Taplink.ru";
 
         Assertions.assertEquals(expectedTextMessage,actualTextMessage);
     }
