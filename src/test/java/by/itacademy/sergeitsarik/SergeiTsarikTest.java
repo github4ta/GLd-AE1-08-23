@@ -1,4 +1,4 @@
-package by.itacademy;
+package by.itacademy.sergeitsarik;
 
 public class SergeiTsarikTest {
 }
