@@ -22,14 +22,14 @@ public class SiteTest {
 
     @Test
     public void testWebsiteLoading(){
-        String headerContactMeXpath = "//h2[@block_id='20309086']";
-        By headerContactMeBy = By.xpath(headerContactMeXpath);
-        waitForPresence(headerContactMeBy);
-        WebElement headerContactMeWebElement = driver.findElement(headerContactMeBy);
+        String titleContactMeXpath = "//h2[@block_id='20309086']";
+        By titleContactMeBy = By.xpath(titleContactMeXpath);
+        waitForPresence(titleContactMeBy);
+        WebElement titleContactMeWebElement = driver.findElement(titleContactMeBy);
 
-        String expectedHeaderContactMe = "Связаться со мной";
-        String actualHeaderContactMe = headerContactMeWebElement.getText();
-        Assertions.assertEquals(expectedHeaderContactMe, actualHeaderContactMe);
+        String expectedTitleContactMe = "Связаться со мной";
+        String actualTitleContactMe = titleContactMeWebElement.getText();
+        Assertions.assertEquals(expectedTitleContactMe, actualTitleContactMe);
     }
 
     @AfterEach
