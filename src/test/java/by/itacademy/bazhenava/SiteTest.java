@@ -21,7 +21,6 @@ public class SiteTest {
 
     @Test
     public void openAndDownloadSite() {
-        //  WebDriver driver = new ChromeDriver();
         String openAndDownloadTextXPath = "//span[contains(text(), 'Taplink.ru')]";
         By openAndDownloadTextXPathTextBy = By.xpath(openAndDownloadTextXPath);
         WebElement openAndDownloadTextWebElement = driver.findElement(openAndDownloadTextXPathTextBy);
