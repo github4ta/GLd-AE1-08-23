@@ -22,10 +22,10 @@ public class SiteTest {
     @Test
     public void openAndDownloadSite() {
         String openAndDownloadTextXPath = "//span[contains(text(), 'Taplink.ru')]";
-        By openAndDownloadTextXPathTextBy = By.xpath(openAndDownloadTextXPath);
-        WebElement openAndDownloadTextWebElement = driver.findElement(openAndDownloadTextXPathTextBy);
+        By openAndDownloadTextBy = By.xpath(openAndDownloadTextXPath);
+        WebElement openAndDownloadWebElement = driver.findElement(openAndDownloadTextBy);
 
-        String actualTextMessage = openAndDownloadTextWebElement.getText();
+        String actualTextMessage = openAndDownloadWebElement.getText();
         String expectedTextMessage = "Taplink.ru";
 
         Assertions.assertEquals(expectedTextMessage, actualTextMessage);
