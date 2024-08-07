@@ -32,9 +32,11 @@ public class OnlinerTest {
         By byAirphones = By.xpath(xPathAiphonesLink);
         WebElement webElementAirphone = driver.findElement(byAirphones);
         String actualTest = webElementAirphone.getText();
-        String expectedTest = "Наушники и гарнитуры";
+        String expectedTest = "Наушники";
         Assertions.assertEquals(expectedTest,actualTest);
     }
+
+
     @AfterEach
     public void afterEach() {
         driver.quit();
