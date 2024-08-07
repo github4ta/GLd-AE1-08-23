@@ -30,7 +30,7 @@ public class SiteTest {
     }
 
     @AfterEach
-    public void AfterEach() {
+    public void afterEach() {
         driver.quit();
     }
 }
