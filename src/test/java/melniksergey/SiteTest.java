@@ -31,8 +31,8 @@ public class SiteTest {
 
     @Test
     public void checkLine() throws InterruptedException {
-       String resultLinkXpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/main/div/div[2]/div[2]/div/div/div/div/div/div[9]/div/div/a/div/div";
-       // String resultLinkXpath = "//div[@class="btn-link-title"]";
+       //String resultLinkXpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/main/div/div[2]/div[2]/div/div/div/div/div/div[9]/div/div/a/div/div";
+        String resultLinkXpath = "//div[@class='btn-link-title']";
         By resultMessageBy = By.xpath(resultLinkXpath);
         WebElement errorMessageWebElement = webDriver.findElement(resultMessageBy);
 
