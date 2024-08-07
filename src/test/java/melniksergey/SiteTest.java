@@ -19,8 +19,9 @@ public class SiteTest {
     public void startBrowser(){
 
         webDriver = new ChromeDriver();
-        webDriver.get("https://taplink.cc/psychologist");
-
+        webDriver.manage().window().maximize();
+        String url = "https://taplink.cc/psychologist";
+        webDriver.get(url);
     }
 
     @AfterEach
@@ -33,12 +34,12 @@ public class SiteTest {
         String resultLinkXpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/main/div/div[2]/div[2]/div/div/div/div/div/div[9]/div/div/a/div/div";
         By resultMessageBy = By.xpath(resultLinkXpath);
         WebElement errorMessageWebElement = webDriver.findElement(resultMessageBy);
+
         String actualMessage = errorMessageWebElement.getText();
         String expectedErroMessage = "СВЯЗАТЬСЯ";
         Thread.sleep(3000);
 
         Assertions.assertEquals(expectedErroMessage, actualMessage);
-
     }
 
 }
