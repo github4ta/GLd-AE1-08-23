@@ -25,6 +25,19 @@ public class OnlinerTest {
     }
 
     @Test
+
+    public void testSSD() {
+        driver.manage().window().maximize();
+        String footerXpath = "//a[@href='https://catalog.onliner.by/ssd']/span/span";
+        By footerBy = By.xpath(footerXpath);
+        WebElement footerWebElement = driver.findElement(footerBy);
+
+        String actualText = footerWebElement.getText();
+        String expectedTextMessage = "SSD";
+
+        Assertions.assertEquals(expectedTextMessage, actualText);
+    }
+   @Test
     public void test() {
         String videoXpath = "//a[@href=\"https://catalog.onliner.by/videocard\"]";
         By videoXpathBy = By.xpath(videoXpath);
@@ -106,11 +119,11 @@ public class OnlinerTest {
         String expectedText = "Телевизоры";
 
         Assertions.assertEquals(expectedText, actualText);
+
     }
 
     @AfterEach
     public void afterEach() {
         driver.quit();
     }
-
 }
