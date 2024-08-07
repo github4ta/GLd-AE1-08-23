@@ -1,9 +1,12 @@
 package by.onliner;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlinerTest {
@@ -19,6 +22,12 @@ public class OnlinerTest {
 
     @Test
     public void test() {
+        String linkWatchesAndBraceletsXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[6]/a/span/span=XPath";
+        By linkWatchesAndBraceletsBy = By.xpath(linkWatchesAndBraceletsXPath);
+        WebElement linkWatchesAndBraceletsWebElement = driver.findElement(linkWatchesAndBraceletsBy);
+        String expectedLinkWatchesAndBracelets = linkWatchesAndBraceletsWebElement.getText();
+        String actualLinkWatchesAndBracelets = "Умные часы и браслеты";
+        Assertions.assertEquals(expectedLinkWatchesAndBracelets, actualLinkWatchesAndBracelets);
         // driver.findElement();
     }
 
