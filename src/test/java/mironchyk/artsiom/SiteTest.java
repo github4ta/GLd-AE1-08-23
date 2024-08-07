@@ -17,9 +17,10 @@ public class SiteTest {
         String webAddress = "https://verapsu.taplink.ws/";
         driver = new ChromeDriver();
         driver.get(webAddress);
+        
     }
     @Test
-    public void openSiteTest(){
+    public void testOpenSite(){
         String fieldSiteFooterTextXPath = "//span[contains(text(), 'Taplink.ru')]";
         By fieldSiteFooterTextBy = By.xpath(fieldSiteFooterTextXPath);
         WebElement fieldSiteFooterTextWebElement = driver.findElement(fieldSiteFooterTextBy);
