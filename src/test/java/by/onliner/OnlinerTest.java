@@ -21,6 +21,11 @@ public class OnlinerTest {
     }
 
     @Test
+    public void test() {
+        // driver.findElement();
+    }
+
+    @Test
     public void testUIButtonTVs() {
         String fieldButtonTVsXPath = "//a[@href='https://catalog.onliner.by/tv']/span/span";
         WebElement buttonTVsWebElement = driver.findElement(By.xpath(fieldButtonTVsXPath));
