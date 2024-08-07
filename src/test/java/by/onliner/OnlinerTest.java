@@ -29,6 +29,7 @@ public class OnlinerTest {
 
         String actualText = footerWebElement.getText();
         String expectedTextMessage = "SSD";
+
         Assertions.assertEquals(expectedTextMessage, actualText);
     }
 
@@ -36,5 +37,4 @@ public class OnlinerTest {
     public void afterEach() {
         driver.quit();
     }
-
 }
