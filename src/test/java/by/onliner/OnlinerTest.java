@@ -84,9 +84,18 @@ public class OnlinerTest {
         Assertions.assertEquals(expetedText, actualText);
     }
 
+    @Test
+    public void testUIButtonTVs() {
+        String fieldButtonTVsXPath = "//a[@href='https://catalog.onliner.by/tv']/span/span";
+        WebElement buttonTVsWebElement = driver.findElement(By.xpath(fieldButtonTVsXPath));
+        String actualText = buttonTVsWebElement.getText();
+        String expectedText = "Телевизоры";
+
+        Assertions.assertEquals(expectedText,actualText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
     }
-
 }
