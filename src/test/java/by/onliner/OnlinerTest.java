@@ -31,12 +31,12 @@ public class OnlinerTest {
         WebElement videoXpathWebElement = driver.findElement(videoXpathBy);
 
 
-
         // driver.findElement();
 
         String actualVideoOne = videoXpathWebElement.getText();
         String expectedVideoOne = "Видеокарты";
         Assertions.assertEquals(expectedVideoOne, actualVideoOne);
+    }
 
     public void testProcessors() {
         String fieldSiteEndTextXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[7]/a/span";
@@ -50,7 +50,7 @@ public class OnlinerTest {
     }
 
     @Test
-    public void testMonitorsLink(){
+    public void testMonitorsLink() {
         driver.manage().window().maximize();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -66,12 +66,12 @@ public class OnlinerTest {
     @Test
     public void testAirphoneLink() {
         driver.manage().window().maximize();
-        String xPathAiphonesLink="//a[@href=\"https://catalog.onliner.by/headphones\"] [@class=\"project-navigation__link project-navigation__link_primary\"]";
+        String xPathAiphonesLink = "//a[@href=\"https://catalog.onliner.by/headphones\"] [@class=\"project-navigation__link project-navigation__link_primary\"]";
         By byAirphones = By.xpath(xPathAiphonesLink);
         WebElement webElementAirphone = driver.findElement(byAirphones);
         String actualTest = webElementAirphone.getText();
         String expectedTest = "Наушники и гарнитуры";
-        Assertions.assertEquals(expectedTest,actualTest);
+        Assertions.assertEquals(expectedTest, actualTest);
     }
 
     @Test
@@ -87,7 +87,7 @@ public class OnlinerTest {
     }
 
     @Test
-    public void testCleanersLink(){
+    public void testCleanersLink() {
         driver.manage().window().maximize();
         String xPathCleanerLink = "//a[@href='https://catalog.onliner.by/vacuumcleaner']/span/span";
         By byCleaners = By.xpath(xPathCleanerLink);
@@ -104,7 +104,7 @@ public class OnlinerTest {
         String actualText = buttonTVsWebElement.getText();
         String expectedText = "Телевизоры";
 
-        Assertions.assertEquals(expectedText,actualText);
+        Assertions.assertEquals(expectedText, actualText);
     }
 
     @AfterEach
