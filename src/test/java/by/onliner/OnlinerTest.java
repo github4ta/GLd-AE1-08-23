@@ -30,7 +30,7 @@ public class OnlinerTest {
         String fieldButtonTVsXPath = "//a[@href='https://catalog.onliner.by/tv']/span/span";
         WebElement buttonTVsWebElement = driver.findElement(By.xpath(fieldButtonTVsXPath));
         String actualText = buttonTVsWebElement.getText();
-        String expectedText = buttonTVsWebElement.getText();
+        String expectedText = "Телевизоры";
 
         Assertions.assertEquals(expectedText,actualText);
     }
@@ -39,5 +39,4 @@ public class OnlinerTest {
     public void afterEach() {
         driver.quit();
     }
-
 }
