@@ -1,9 +1,12 @@
 package by.onliner;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlinerTest {
@@ -18,8 +21,13 @@ public class OnlinerTest {
     }
 
     @Test
-    public void test() {
-        // driver.findElement();
+    public void testUIButtonTVs() {
+        String fieldButtonTVsXPath = "//a[@href='https://catalog.onliner.by/tv']/span/span";
+        WebElement buttonTVsWebElement = driver.findElement(By.xpath(fieldButtonTVsXPath));
+        String actualText = buttonTVsWebElement.getText();
+        String expectedText = buttonTVsWebElement.getText();
+
+        Assertions.assertEquals(expectedText,actualText);
     }
 
     @AfterEach
