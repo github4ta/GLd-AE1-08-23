@@ -11,17 +11,17 @@ public class SiteTest {
 
     @BeforeEach
     public void setUp(){
+        String baseURL = "https://taplink.cc/";
+        String subURL = "katya.psiholog";
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        driver.get(baseURL + subURL);
     }
 
     @Test
     public void testWebsiteLoading(){
-        String url = "https://taplink.cc/katya.psiholog";
-        driver.get(url);
-
         String headerContactMeXpath = "//h2[@block_id='20309086']";
         By headerContactMeBy = By.xpath(headerContactMeXpath);
         waitForPresence(headerContactMeBy);
