@@ -14,8 +14,9 @@ public class SiteTest {
 
     @BeforeEach
     public void BeforeEach() {
+        String webAddress = "https://www.alla-kovtunenko.com/";
         driver = new ChromeDriver();
-        driver.get("https://www.alla-kovtunenko.com/");
+        driver.get(webAddress);
     }
 
     @Test
