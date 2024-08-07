@@ -20,7 +20,7 @@ public class SiteTest {
         
     }
     @Test
-    public void testOpenSite(){
+    public void openSiteTest(){
         String fieldSiteFooterTextXPath = "//span[contains(text(), 'Taplink.ru')]";
         By fieldSiteFooterTextBy = By.xpath(fieldSiteFooterTextXPath);
         WebElement fieldSiteFooterTextWebElement = driver.findElement(fieldSiteFooterTextBy);
