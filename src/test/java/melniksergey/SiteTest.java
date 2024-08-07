@@ -29,13 +29,13 @@ public class SiteTest {
     }
 
     @Test
-    public void checkLine(){
+    public void checkLine() throws InterruptedException {
         String resultLinkXpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/main/div/div[2]/div[2]/div/div/div/div/div/div[9]/div/div/a/div/div";
         By resultMessageBy = By.xpath(resultLinkXpath);
         WebElement errorMessageWebElement = webDriver.findElement(resultMessageBy);
         String actualMessage = errorMessageWebElement.getText();
-        String expectedErroMessage = "Связаться";
-        System.out.println(actualMessage);
+        String expectedErroMessage = "СВЯЗАТЬСЯ";
+        Thread.sleep(3000);
 
         Assertions.assertEquals(expectedErroMessage, actualMessage);
 
