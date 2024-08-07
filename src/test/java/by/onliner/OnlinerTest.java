@@ -73,6 +73,17 @@ public class OnlinerTest {
         Assertions.assertEquals(expectedButtonText, actualButtonText);
     }
 
+    @Test
+    public void testCleanersLink(){
+        driver.manage().window().maximize();
+        String xPathCleanerLink = "//a[@href='https://catalog.onliner.by/vacuumcleaner']/span/span";
+        By byCleaners = By.xpath(xPathCleanerLink);
+        WebElement webElementCleaners = driver.findElement(byCleaners);
+        String actualText = webElementCleaners.getText();
+        String expetedText = "Пылесосы";
+        Assertions.assertEquals(expetedText, actualText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
