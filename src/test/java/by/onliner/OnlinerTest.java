@@ -38,6 +38,7 @@ public class OnlinerTest {
         Assertions.assertEquals(expectedVideoOne, actualVideoOne);
     }
 
+    @Test
     public void testProcessors() {
         String fieldSiteEndTextXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[7]/a/span";
         By fieldSiteEndTextBy = By.xpath(fieldSiteEndTextXPath);
