@@ -57,7 +57,7 @@ public class OnlinerTest {
         By byAirphones = By.xpath(xPathAiphonesLink);
         WebElement webElementAirphone = driver.findElement(byAirphones);
         String actualTest = webElementAirphone.getText();
-        String expectedTest = "Наушники";
+        String expectedTest = "Наушники и гарнитуры";
         Assertions.assertEquals(expectedTest,actualTest);
     }
 
