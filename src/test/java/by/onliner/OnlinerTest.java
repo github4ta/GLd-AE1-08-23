@@ -49,6 +49,18 @@ public class OnlinerTest {
         Assertions.assertEquals(expectedTest,actualTest);
     }
 
+    @Test
+    public void testButtonNotebook() {
+        String buttonNotebookXPath = "//a[@href='https://catalog.onliner.by/notebook']//span[@class='project-navigation__sign']";
+        By buttonNotebookBy = By.xpath(buttonNotebookXPath);
+        WebElement buttonNotebookWebElement = driver.findElement(buttonNotebookBy);
+
+        String expectedButtonText = "Ноутбуки";
+        String actualButtonText = buttonNotebookWebElement.getText();
+
+        Assertions.assertEquals(expectedButtonText, actualButtonText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
