@@ -28,21 +28,18 @@ public class OnlinerTest {
     public void testMonitorsLink(){
         driver.manage().window().maximize();
 
-        // Use WebDriverWait to wait for the element to be present
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         String xPathMonitorsLink = "//a[@href='https://catalog.onliner.by/display']//span[contains(@class, 'project-navigation__sign')]";
         By byMonitors = By.xpath(xPathMonitorsLink);
 
-        // Wait until the element is present and visible
         WebElement webElementMonitors = wait.until(ExpectedConditions.visibilityOfElementLocated(byMonitors));
         String actualText = webElementMonitors.getText();
         String expectedText = "Мониторы";
 
-        // Print expected and actual results to console
+
         System.out.println("Expected Text: " + expectedText);
         System.out.println("Actual Text: " + actualText);
 
-        // Assert that the expected and actual text are equal
         Assertions.assertEquals(expectedText, actualText);
     }
 
