@@ -35,7 +35,6 @@ public class OnlinerTest {
         String expectedTest = "Наушники и гарнитуры";
         Assertions.assertEquals(expectedTest,actualTest);
     }
-
     @AfterEach
     public void afterEach() {
         driver.quit();
