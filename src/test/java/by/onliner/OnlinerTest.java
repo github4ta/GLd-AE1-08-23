@@ -21,7 +21,7 @@ public class OnlinerTest {
     }
 
     @Test
-    public void test() {
+    public void testSSD() {
         driver.manage().window().maximize();
         String footerXpath = "//a[@href='https://catalog.onliner.by/ssd']/span/span";
         By footerBy = By.xpath(footerXpath);
