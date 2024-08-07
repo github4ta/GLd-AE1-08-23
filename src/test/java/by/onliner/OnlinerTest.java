@@ -32,7 +32,6 @@ public class OnlinerTest {
         WebElement fieldSiteEndTextWebElement = driver.findElement(fieldSiteEndTextBy);
 
         String actualTextMessage = fieldSiteEndTextWebElement.getText();
-        System.out.println(actualTextMessage);
         String expectedTextMessage = "Процессоры";
 
         Assertions.assertEquals(expectedTextMessage, actualTextMessage);
