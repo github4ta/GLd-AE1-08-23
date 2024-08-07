@@ -25,6 +25,18 @@ public class OnlinerTest {
     }
 
     @Test
+    public void testProcessors() {
+        String fieldSiteEndTextXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[7]/a/span";
+        By fieldSiteEndTextBy = By.xpath(fieldSiteEndTextXPath);
+        WebElement fieldSiteEndTextWebElement = driver.findElement(fieldSiteEndTextBy);
+
+        String actualTextMessage = fieldSiteEndTextWebElement.getText();
+        String expectedTextMessage = "Процессоры";
+
+        Assertions.assertEquals(expectedTextMessage, actualTextMessage);
+    }
+
+    @Test
     public void testMonitorsLink(){
         driver.manage().window().maximize();
 
@@ -65,4 +77,5 @@ public class OnlinerTest {
     public void afterEach() {
         driver.quit();
     }
+
 }
