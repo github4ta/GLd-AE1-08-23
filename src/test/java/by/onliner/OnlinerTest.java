@@ -53,7 +53,8 @@ public class OnlinerTest {
 
     @Test
     public void testProcessors() {
-        String fieldSiteEndTextXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[7]/a/span";
+        driver.manage().window().maximize();
+        String fieldSiteEndTextXPath = "//a[@href='https://catalog.onliner.by/cpu']/span/span";
         By fieldSiteEndTextBy = By.xpath(fieldSiteEndTextXPath);
         WebElement fieldSiteEndTextWebElement = driver.findElement(fieldSiteEndTextBy);
 
