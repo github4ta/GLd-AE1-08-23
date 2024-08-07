@@ -16,7 +16,7 @@ public class SiteTest {
 
 
     @BeforeEach
-    public void startBrowser(){
+    public void testStartBrowserCheckLink(){
 
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
@@ -25,13 +25,14 @@ public class SiteTest {
     }
 
     @AfterEach
-    public void stopBrowser(){
+    public void tearDown(){
         webDriver.quit();
     }
 
     @Test
     public void checkLine() throws InterruptedException {
-        String resultLinkXpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/main/div/div[2]/div[2]/div/div/div/div/div/div[9]/div/div/a/div/div";
+       String resultLinkXpath = "/html/body/div[1]/div/div/div/div[2]/div[2]/div/div/main/div/div[2]/div[2]/div/div/div/div/div/div[9]/div/div/a/div/div";
+       // String resultLinkXpath = "//div[@class="btn-link-title"]";
         By resultMessageBy = By.xpath(resultLinkXpath);
         WebElement errorMessageWebElement = webDriver.findElement(resultMessageBy);
 
