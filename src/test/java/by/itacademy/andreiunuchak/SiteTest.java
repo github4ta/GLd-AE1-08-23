@@ -37,7 +37,7 @@ public class SiteTest {
         driver.quit();
     }
 
-    public void waitForPresence(By by) {
+    private void waitForPresence(By by) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (Exception e) {
