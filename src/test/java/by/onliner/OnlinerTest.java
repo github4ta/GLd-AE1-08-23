@@ -1,9 +1,12 @@
 package by.onliner;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class OnlinerTest {
@@ -20,6 +23,17 @@ public class OnlinerTest {
     @Test
     public void test() {
         // driver.findElement();
+    }
+
+    @Test
+    public void testButtonEnter() {
+        String footerXpath = "";
+        By footerBy = By.xpath(footerXpath);
+        WebElement footerWebElement = driver.findElement(footerBy);
+
+        String actualText = footerWebElement.getText();
+
+        Assertions.assertEquals("" , actualText);
     }
 
     @AfterEach
