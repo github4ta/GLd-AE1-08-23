@@ -13,6 +13,7 @@ public class HomeTest {
     @BeforeEach
     public void beforeEach() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
 
