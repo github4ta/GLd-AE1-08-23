@@ -23,7 +23,7 @@ public class FooterTest {
     }
 
     @Test
-    public void testHPFT007() {
+    public void testHPFT006() {
         Waiters.waitFor(3);
         String xPathPublicAgreement = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
         By byFooterPublicAgreement = By.xpath(xPathPublicAgreement);
