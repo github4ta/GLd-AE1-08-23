@@ -26,7 +26,7 @@ public class OnlinerTest {
 
     @Test
     public void testWatchesAndBracelets() {
-        String linkWatchesAndBraceletsXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[6]/a/span/span=XPath";
+        String linkWatchesAndBraceletsXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[6]/a/span/span";
         By linkWatchesAndBraceletsBy = By.xpath(linkWatchesAndBraceletsXPath);
         WebElement linkWatchesAndBraceletsWebElement = driver.findElement(linkWatchesAndBraceletsBy);
         String expectedLinkWatchesAndBracelets = linkWatchesAndBraceletsWebElement.getText();
