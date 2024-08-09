@@ -33,7 +33,7 @@ public class FooterTest {
     }
 
     @Test
-    public void testHPFT007 (){
+    public void testHPFT007() {
         String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
         By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
         WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
@@ -51,6 +51,17 @@ public class FooterTest {
         String expectedText = "Реклама";
 
         Assertions.assertEquals(expectedText, actualText);
+    }
+
+    @Test
+    public void testHPFT009() {
+        String aRefundRulesXPath = "//a[@href='https://blog.onliner.by/pravila-vozvrata-tovarov-i-deneg']";
+        By aRefundRulesBy = By.xpath(aRefundRulesXPath);
+        WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
+
+        String expectedRefundRulesText = "Правила возврата";
+        String actualRefundRulesText = aRefundRulesWebElement.getText();
+        Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
     }
 
     @AfterEach
