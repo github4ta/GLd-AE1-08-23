@@ -1,6 +1,5 @@
 package by.onliner.homepage;
 
-import by.onliner.Waiters;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +28,7 @@ public class FooterTest {
         WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
 
         String expectedText = "Политика обработки персональных данных";
-        String actualText = aPrivacyPolicyWebElement.getText().trim();
+        String actualText = aPrivacyPolicyWebElement.getText();
         Assertions.assertEquals(expectedText, actualText);
     }
 
