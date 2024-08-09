@@ -1,8 +1,12 @@
 package by.onliner.homepage;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FooterTest {
@@ -17,9 +21,19 @@ public class FooterTest {
         driver.get(BASE_URL);
     }
 
+    @Test
+    public void testHPFT007 (){
+        String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+        By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
+        WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
+
+        String expectedText = "Политика обработки персональных данных";
+        String actualText = aPrivacyPolicyWebElement.getText();
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
     }
-
 }
