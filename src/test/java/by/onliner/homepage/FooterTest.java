@@ -22,7 +22,7 @@ public class FooterTest {
     }
 
     @Test
-    public void testHPFT009 (){
+    public void testHPFT009() {
         String aRefundRulesXPath = "//a[@href='https://blog.onliner.by/pravila-vozvrata-tovarov-i-deneg']";
         By aRefundRulesBy = By.xpath(aRefundRulesXPath);
         WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
