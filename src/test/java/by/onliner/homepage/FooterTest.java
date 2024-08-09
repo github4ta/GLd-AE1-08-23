@@ -22,7 +22,7 @@ public class FooterTest {
     }
 
     @Test
-    public void testHPFT007 (){
+    public void testHPFT007() {
         String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
         By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
         WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
