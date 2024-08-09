@@ -1,4 +1,4 @@
-package by.itacademy.antonzinko;
+package by.itacademy.onliner.homepage;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
