@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class FooterTest {
@@ -23,6 +22,7 @@ public class FooterTest {
         driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
+
     @Test
     public void testHPFT002() {
         driver.manage().window().maximize();
@@ -33,9 +33,9 @@ public class FooterTest {
 
         String actualText = footerWebElement.getText();
         String expectedTextMessage = "Контакты редакции";
-
         Assertions.assertEquals(expectedTextMessage, actualText);
     }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
