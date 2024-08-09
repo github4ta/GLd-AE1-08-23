@@ -35,5 +35,4 @@ public class FooterTest {
     public void afterEach() {
         driver.quit();
     }
-
 }
