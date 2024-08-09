@@ -22,7 +22,7 @@ public class FooterTest {
     }
 
     @Test
-    public void testHPFT010(){
+    public void testHPFT010() {
         String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
         WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
         String actualText = footerButtonAdvertisingWebElement.getText();
