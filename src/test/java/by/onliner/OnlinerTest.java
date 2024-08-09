@@ -25,12 +25,12 @@ public class OnlinerTest {
     }
 
     @Test
-    public void testVideocards() {
-        String videoXpath = "//a[@href=\"https://catalog.onliner.by/videocard\"]";
-        By videoXpathBy = By.xpath(videoXpath);
-        WebElement videoXpathWebElement = driver.findElement(videoXpathBy);
+    public void testVideoCards() {
+        String videoCardsXpath = "//a[@href=\"https://catalog.onliner.by/videocard\"]";
+        By videoCardsBy = By.xpath(videoCardsXpath);
+        WebElement videoCardsWebElement = driver.findElement(videoCardsBy);
 
-        String actualVideoOne = videoXpathWebElement.getText();
+        String actualVideoOne = videoCardsWebElement.getText();
         String expectedVideoOne = "Видеокарты";
         Assertions.assertEquals(expectedVideoOne, actualVideoOne);
     }
