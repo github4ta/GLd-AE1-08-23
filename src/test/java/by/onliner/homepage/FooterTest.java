@@ -1,6 +1,5 @@
 package by.onliner.homepage;
 
-import by.onliner.Waiters;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,9 +27,9 @@ public class FooterTest {
         By aRefundRulesBy = By.xpath(aRefundRulesXPath);
         WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
 
-        String expectedText = "Правила возврата";
-        String actualText = aRefundRulesWebElement.getText();
-        Assertions.assertEquals(expectedText, actualText);
+        String expectedRefundRulesText = "Правила возврата";
+        String actualRefundRulesText = aRefundRulesWebElement.getText();
+        Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
     }
 
     @AfterEach
