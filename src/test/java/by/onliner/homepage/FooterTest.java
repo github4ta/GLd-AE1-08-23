@@ -42,8 +42,20 @@ public class FooterTest {
         Assertions.assertEquals(expectedText, actualText);
     }
 
+    @Test
+    public void testHPFT009() {
+        String aRefundRulesXPath = "//a[@href='https://blog.onliner.by/pravila-vozvrata-tovarov-i-deneg']";
+        By aRefundRulesBy = By.xpath(aRefundRulesXPath);
+        WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
+
+        String expectedRefundRulesText = "Правила возврата";
+        String actualRefundRulesText = aRefundRulesWebElement.getText();
+        Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
     }
+
 }
