@@ -20,14 +20,14 @@ public class SiteTest {
     }
 
     @Test
-    public void openSiteTest(){
-        String fieldSiteFooterTextXPath = "//span[contains(text(), 'Taplink.ru')]";
+    public void openSiteTest() {
+        String fieldSiteFooterTextXPath = "//span[contains(text(), 'Taplink.ru']";
         By fieldSiteFooterTextBy = By.xpath(fieldSiteFooterTextXPath);
         WebElement fieldSiteFooterTextWebElement = driver.findElement(fieldSiteFooterTextBy);
         String actualTextMessage = fieldSiteFooterTextWebElement.getText();
         String expectedTextMessage = "Taplink.ru";
 
-        Assertions.assertEquals(expectedTextMessage,actualTextMessage);
+        Assertions.assertEquals(expectedTextMessage, actualTextMessage);
     }
 
     @AfterEach
