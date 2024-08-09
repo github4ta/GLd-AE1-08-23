@@ -22,6 +22,17 @@ public class FooterTest {
     }
 
     @Test
+    public void testHPFT007 (){
+        String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+        By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
+        WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
+
+        String expectedText = "Политика обработки персональных данных";
+        String actualText = aPrivacyPolicyWebElement.getText();
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
+    @Test
     public void testHPFT010() {
         String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
         WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
