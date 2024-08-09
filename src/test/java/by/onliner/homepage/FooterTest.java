@@ -22,6 +22,17 @@ public class FooterTest {
     }
 
     @Test
+    public void testHPFT005() {
+        String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
+        By aUserAgreementBy = By.xpath(aUserAgreementXPath);
+        WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
+
+        String expectedUserAgreementText = "Пользовательское соглашение";
+        String actualUserAgreementText = aUserAgreementWebElement.getText();
+        Assertions.assertEquals(expectedUserAgreementText, actualUserAgreementText);
+    }
+
+    @Test
     public void testHPFT007() {
         String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
         By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
