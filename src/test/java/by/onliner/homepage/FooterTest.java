@@ -32,6 +32,16 @@ public class FooterTest {
         Assertions.assertEquals(expectedText, actualText);
     }
 
+    @Test
+    public void testHPFT010() {
+        String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
+        WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
+        String actualText = footerButtonAdvertisingWebElement.getText();
+        String expectedText = "Реклама";
+
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
