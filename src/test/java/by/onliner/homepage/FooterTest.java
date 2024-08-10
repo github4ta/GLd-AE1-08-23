@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FooterTest {
 
@@ -20,6 +21,19 @@ public class FooterTest {
         driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
+
+    @Test
+    public void testHPFT004() {
+        String footerLinkManifestPath = "//a[@href='https://blog.onliner.by/manifest']";
+        By footerLinkManifestBy = By.xpath(footerLinkManifestPath);
+        WebElement footerLinkManifestWebElement = driver.findElement(footerLinkManifestBy);
+
+        String expectedLinkManifestText = "Манифест";
+        String actualLinkManifestText = footerLinkManifestWebElement.getText();
+        Assertions.assertEquals(expectedLinkManifestText, actualLinkManifestText);
+    }
+
+
 
     @Test
     public void testHPFT005() {
