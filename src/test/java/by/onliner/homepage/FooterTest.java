@@ -35,6 +35,49 @@ public class FooterTest {
         Assertions.assertEquals(expectedText, actualText);
     }
 
+   @Test
+    public void testHPFT005() {
+        String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
+        By aUserAgreementBy = By.xpath(aUserAgreementXPath);
+        WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
+
+        String expectedUserAgreementText = "Пользовательское соглашение";
+        String actualUserAgreementText = aUserAgreementWebElement.getText();
+        Assertions.assertEquals(expectedUserAgreementText, actualUserAgreementText);
+    }
+
+    @Test
+    public void testHPFT007() {
+        String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+        By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
+        WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
+
+        String expectedText = "Политика обработки персональных данных";
+        String actualText = aPrivacyPolicyWebElement.getText();
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
+    @Test
+    public void testHPFT010() {
+        String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
+        WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
+        String actualText = footerButtonAdvertisingWebElement.getText();
+        String expectedText = "Реклама";
+
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
+    @Test
+    public void testHPFT009() {
+        String aRefundRulesXPath = "//a[@href='https://blog.onliner.by/pravila-vozvrata-tovarov-i-deneg']";
+        By aRefundRulesBy = By.xpath(aRefundRulesXPath);
+        WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
+
+        String expectedRefundRulesText = "Правила возврата";
+        String actualRefundRulesText = aRefundRulesWebElement.getText();
+        Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
