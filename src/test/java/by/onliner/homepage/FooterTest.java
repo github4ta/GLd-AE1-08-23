@@ -27,8 +27,8 @@ public class FooterTest {
         driver.manage().window().maximize();
         Waiters.waitFor(2);
         String footerElementXpath = "//a[@href ='https://people.onliner.by/contacts']";
-        By footerBy = By.xpath(footerElementXpath);
-        WebElement footerWebElement = driver.findElement(footerBy);
+        By footerElementBy = By.xpath(footerElementXpath);
+        WebElement footerWebElement = driver.findElement(footerElementBy);
 
         String actualText = footerWebElement.getText();
         String expectedText = "Контакты редакции";
