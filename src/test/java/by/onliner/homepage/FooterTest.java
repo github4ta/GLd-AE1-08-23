@@ -1,5 +1,6 @@
 package by.onliner.homepage;
 
+import by.onliner.Waiters;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,6 +23,19 @@ public class FooterTest {
     }
 
     @Test
+    public void testHPFT002() {
+        driver.manage().window().maximize();
+        Waiters.waitFor(2);
+        String footerElementXpath = "//a[@href ='https://people.onliner.by/contacts']";
+        By footerElementBy = By.xpath(footerElementXpath);
+        WebElement footerWebElement = driver.findElement(footerElementBy);
+
+        String actualText = footerWebElement.getText();
+        String expectedText = "Контакты редакции";
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
+   @Test
     public void testHPFT005() {
         String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
         By aUserAgreementBy = By.xpath(aUserAgreementXPath);
@@ -68,5 +82,4 @@ public class FooterTest {
     public void afterEach() {
         driver.quit();
     }
-
 }
