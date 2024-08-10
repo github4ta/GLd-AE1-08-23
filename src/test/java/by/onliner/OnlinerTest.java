@@ -25,7 +25,6 @@ public class OnlinerTest {
     }
 
     @Test
-
     public void testSSD() {
         driver.manage().window().maximize();
         String footerXpath = "//a[@href='https://catalog.onliner.by/ssd']/span/span";
@@ -37,7 +36,8 @@ public class OnlinerTest {
 
         Assertions.assertEquals(expectedTextMessage, actualText);
     }
-   @Test
+
+    @Test
     public void test() {
         String videoXpath = "//a[@href=\"https://catalog.onliner.by/videocard\"]";
         By videoXpathBy = By.xpath(videoXpath);
@@ -123,8 +123,20 @@ public class OnlinerTest {
 
     }
 
+    @Test
+    public void testWatchesAndBracelets() {
+        String linkWatchesAndBraceletsXPath = "//*[@id=\"container\"]/div/div/div/div/div[1]/div/div[1]/ul[2]/li[6]/a/span/span";
+        By linkWatchesAndBraceletsBy = By.xpath(linkWatchesAndBraceletsXPath);
+        WebElement linkWatchesAndBraceletsWebElement = driver.findElement(linkWatchesAndBraceletsBy);
+        String expectedLinkWatchesAndBracelets = linkWatchesAndBraceletsWebElement.getText();
+        String actualLinkWatchesAndBracelets = "Умные часы и браслеты";
+        Assertions.assertEquals(expectedLinkWatchesAndBracelets, actualLinkWatchesAndBracelets);
+        // driver.findElement();
+    }
+
     @AfterEach
     public void afterEach() {
         driver.quit();
     }
+
 }
