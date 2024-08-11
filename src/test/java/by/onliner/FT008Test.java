@@ -28,7 +28,7 @@ public class FT008Test {
         By buttonUserSupportBy = By.xpath(buttonUserSupportXpath);
         WebElement buttonUserSupportWebElement = driver.findElement(buttonUserSupportBy);
         buttonUserSupportWebElement.click();
-
+        Waiters.waitFor(2);
         String UserSupportXpath = "//div[@id=\"main\"]/div/h1";
         By UserSupportBy = By.xpath(UserSupportXpath);
         WebElement UserSupportWebElement = driver.findElement(UserSupportBy);
