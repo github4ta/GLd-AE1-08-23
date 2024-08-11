@@ -35,7 +35,7 @@ public class FT001Test {
         buttonAboutByWebElement.click();
 
         //3. then
-        String aboutPageHeaderXPath = "//*[@id=\"container\"]/div/div[2]/div/div/div[3]/div[1]/div/div/div[2]/div/div[1]/div/h1";
+        String aboutPageHeaderXPath = "//div[@class = \"news-text\"]/h1";
         By aboutPageHeaderBy = By.xpath(aboutPageHeaderXPath);
         WebElement aboutPageHeaderWebElement = driver.findElement(aboutPageHeaderBy);
 
