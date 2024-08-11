@@ -11,13 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FT006Test {
     private WebDriver driver;
-    private final String BASE_URL = "https://www.onliner.by/";
 
     @BeforeEach
     public void setupDriver() {
+        String workingPageURL = "https://www.onliner.by/";
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(BASE_URL);
+        driver.get(workingPageURL);
     }
 
     @Test
