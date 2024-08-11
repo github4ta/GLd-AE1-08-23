@@ -29,8 +29,8 @@ public class FT008Test {
         WebElement buttonUserSupportWebElement = driver.findElement(buttonUserSupportBy);
         buttonUserSupportWebElement.click();
         Waiters.waitFor(2);
-        String UserSupportXpath = "//div[@id=\'main\']/div/h1";
-        By userSupportBy = By.xpath(UserSupportXpath);
+        String userSupportXpath = "//div[@id=\'main\']/div/h1";
+        By userSupportBy = By.xpath(userSupportXpath);
         WebElement userSupportWebElement = driver.findElement(userSupportBy);
         String actualText = userSupportWebElement.getText();
         String expectedText = "Запрос в службу поддержки";
