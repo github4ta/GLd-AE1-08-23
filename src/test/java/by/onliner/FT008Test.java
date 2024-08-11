@@ -17,23 +17,24 @@ public class FT008Test {
     @BeforeEach
     public void beforeEach() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
 
     @Test
-    public void testWhenUserClickSiteOnlinerThenUserSupportOpened() {
-        driver.manage().window().maximize();
+    public void testWhenClickButtonUserSupportThenUserSupportOpened() {
         Waiters.waitFor(2);
         String buttonUserSupportXpath = "//a[@href='https://support.onliner.by']";
         By buttonUserSupportBy = By.xpath(buttonUserSupportXpath);
         WebElement buttonUserSupportWebElement = driver.findElement(buttonUserSupportBy);
         buttonUserSupportWebElement.click();
         Waiters.waitFor(2);
-        String UserSupportXpath = "//div[@id=\"main\"]/div/h1";
-        By UserSupportBy = By.xpath(UserSupportXpath);
-        WebElement UserSupportWebElement = driver.findElement(UserSupportBy);
-        String actualText = UserSupportWebElement.getText();
+        String UserSupportXpath = "//div[@id=\'main\']/div/h1";
+        By userSupportBy = By.xpath(UserSupportXpath);
+        WebElement userSupportWebElement = driver.findElement(userSupportBy);
+        String actualText = userSupportWebElement.getText();
         String expectedText = "Запрос в службу поддержки";
+
         Assertions.assertEquals(expectedText, actualText);
     }
 
