@@ -28,7 +28,7 @@ public class FooterTest {
         By aboutKompanyBy = By.xpath(aboutKompanyXPath);
         WebElement aRefundRulesWebElement = driver.findElement(aboutKompanyBy);
 
-        String expectedAboutKompanyText = "О компании";
+        String expectedAboutKompanyText =  "О компании";
         String actualAboutKompanyText = aRefundRulesWebElement.getText();
         Assertions.assertEquals(expectedAboutKompanyText, actualAboutKompanyText);
     }
