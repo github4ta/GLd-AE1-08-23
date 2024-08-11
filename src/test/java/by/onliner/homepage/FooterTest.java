@@ -26,10 +26,10 @@ public class FooterTest {
     public void testHPFT001() {
         String aboutKompanyXPath = "//a[@href='https://blog.onliner.by/about'] ";
         By aboutKompanyBy = By.xpath(aboutKompanyXPath);
-        WebElement aRefundRulesWebElement = driver.findElement(aboutKompanyBy);
+        WebElement aboutKompanyWebElement = driver.findElement(aboutKompanyBy);
 
         String expectedAboutKompanyText =  "О компании";
-        String actualAboutKompanyText = aRefundRulesWebElement.getText();
+        String actualAboutKompanyText = aboutKompanyWebElement.getText();
         Assertions.assertEquals(expectedAboutKompanyText, actualAboutKompanyText);
     }
 
