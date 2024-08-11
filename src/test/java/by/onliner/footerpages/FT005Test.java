@@ -1,6 +1,5 @@
 package by.onliner.footerpages;
 
-import by.onliner.homepage.FooterTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,10 +25,10 @@ public class FT005Test{
 
     @Test
     public void testWhenUserClickSiteRulesThenSiteRulesOpened(){
-        String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
-        By aUserAgreementBy = By.xpath(aUserAgreementXPath);
-        WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
-        aUserAgreementWebElement.click();
+        String aSiteRulesXPath = "//a[@href='https://blog.onliner.by/siterules']";
+        By aSiteRulesBy = By.xpath(aSiteRulesXPath);
+        WebElement aSiteRulesWebElement = driver.findElement(aSiteRulesBy);
+        aSiteRulesWebElement.click();
 
         String expectedSiteRulesURL = "https://blog.onliner.by/siterules";
         String actualSiteRulesURL = driver.getCurrentUrl();
@@ -39,9 +38,9 @@ public class FT005Test{
         By titleSiteRulesTextBy = By.xpath(titleSiteRulesTextXPath);
         WebElement titleSiteRulesTextWebElement = driver.findElement(titleSiteRulesTextBy);
 
-        String expectedTitleText = "Пользовательское соглашение/Правила";
-        String actualTitleText = titleSiteRulesTextWebElement.getText();
-        Assertions.assertEquals(expectedTitleText, actualTitleText);
+        String expectedTitleSiteRulesText = "Пользовательское соглашение/Правила";
+        String actualTitleSiteRulesText = titleSiteRulesTextWebElement.getText();
+        Assertions.assertEquals(expectedTitleSiteRulesText, actualTitleSiteRulesText);
     }
 
     @AfterEach
