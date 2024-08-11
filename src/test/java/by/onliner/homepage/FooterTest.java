@@ -33,8 +33,6 @@ public class FooterTest {
         Assertions.assertEquals(expectedLinkManifestText, actualLinkManifestText);
     }
 
-
-
     @Test
     public void testHPFT005() {
         String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
