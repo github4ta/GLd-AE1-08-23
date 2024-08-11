@@ -1,5 +1,6 @@
-package by.onliner;
+package by.onliner.footerpages;
 
+import by.onliner.Waiters;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +30,7 @@ public class FT008Test {
         WebElement buttonUserSupportWebElement = driver.findElement(buttonUserSupportBy);
         buttonUserSupportWebElement.click();
         Waiters.waitFor(2);
-        String userSupportXpath = "//div[@id=\'main\']/div/h1";
+        String userSupportXpath = "//div[@id='main']/div/h1";
         By userSupportBy = By.xpath(userSupportXpath);
         WebElement userSupportWebElement = driver.findElement(userSupportBy);
         String actualText = userSupportWebElement.getText();
