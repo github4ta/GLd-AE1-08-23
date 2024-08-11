@@ -10,7 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FT001Test {
 
-    WebDriver driver;
+     private WebDriver driver;
+     private final String BASE_URL = "https://www.onliner.by/";
+
 
     @BeforeEach
     public void beforeEach() {
@@ -28,11 +30,11 @@ public class FT001Test {
         //1. Given
 
         //2. When - act
-        String buttonAboutXPath = "//a[@href=\"https://blog.onliner.by/about\"]";
-        By buttonAboutBy = By.xpath(buttonAboutXPath);
-        WebElement buttonAboutByWebElement = driver.findElement(buttonAboutBy);
+        String linkAboutXPath = "//a[@href=\"https://blog.onliner.by/about\"]";
+        By linkAboutBy = By.xpath(linkAboutXPath);
+        WebElement linkAboutByWebElement = driver.findElement(linkAboutBy);
 
-        buttonAboutByWebElement.click();
+        linkAboutByWebElement.click();
 
         //3. then
         String aboutPageHeaderXPath = "//div[@class = \"news-text\"]/h1";
