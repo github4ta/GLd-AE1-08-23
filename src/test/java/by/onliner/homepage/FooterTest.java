@@ -31,7 +31,7 @@ public class FooterTest {
         WebElement footerWebElement = driver.findElement(footerElementBy);
 
         String actualText = footerWebElement.getText();
-        String expectedText = "РљРѕРЅС‚Р°РєС‚С‹ СЂРµРґР°РєС†РёРё";
+        String expectedText = "Контакты редакции";
         Assertions.assertEquals(expectedText, actualText);
     }
 
@@ -41,7 +41,7 @@ public class FooterTest {
         By aUserAgreementBy = By.xpath(aUserAgreementXPath);
         WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
 
-        String expectedUserAgreementText = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРµ СЃРѕРіР»Р°С€РµРЅРёРµ";
+        String expectedUserAgreementText = "Пользовательское соглашение";
         String actualUserAgreementText = aUserAgreementWebElement.getText();
         Assertions.assertEquals(expectedUserAgreementText, actualUserAgreementText);
     }
@@ -52,7 +52,7 @@ public class FooterTest {
         By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
         WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
 
-        String expectedText = "РџРѕР»РёС‚РёРєР° РѕР±СЂР°Р±РѕС‚РєРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…";
+        String expectedText = "Политика обработки персональных данных";
         String actualText = aPrivacyPolicyWebElement.getText();
         Assertions.assertEquals(expectedText, actualText);
     }
@@ -62,7 +62,7 @@ public class FooterTest {
         String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
         WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
         String actualText = footerButtonAdvertisingWebElement.getText();
-        String expectedText = "Р РµРєР»Р°РјР°";
+        String expectedText = "Реклама";
 
         Assertions.assertEquals(expectedText, actualText);
     }
@@ -73,7 +73,7 @@ public class FooterTest {
         By aRefundRulesBy = By.xpath(aRefundRulesXPath);
         WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
 
-        String expectedRefundRulesText = "РџСЂР°РІРёР»Р° РІРѕР·РІСЂР°С‚Р°";
+        String expectedRefundRulesText = "Правила возврата";
         String actualRefundRulesText = aRefundRulesWebElement.getText();
         Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
     }
