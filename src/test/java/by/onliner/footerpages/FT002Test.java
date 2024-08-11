@@ -41,9 +41,6 @@ public class FT002Test {
                 "Контакты редакции. Манифест. Спецпроекты. Правила использования материалов";
         String actualTitleEditorContact = webElementTitleEditorContacts.getText();
         Assertions.assertEquals(expectedTitleEditorContacts, actualTitleEditorContact);
-
-
-
     }
 
     @AfterEach
