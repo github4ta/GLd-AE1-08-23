@@ -10,12 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class FT002Test {
 
     WebDriver driver;
-    private String urlBase = "https://www.onliner.by/";
+    final String urlBase = "https://www.onliner.by/";
 
     @BeforeEach
     public void beforeEach(){
@@ -25,13 +25,11 @@ public class FT002Test {
     }
 
     @Test
-    public void testWhenUserClickEditorContactsThenContactsOpened() throws InterruptedException {
+    public void testWhenUserClickEditorContactsThenContactsOpened() {
         String linkEditorContacts = "//a[contains(text(),'Контакты редакции')]";
         By xPathlinkEditorContacts = By.xpath(linkEditorContacts);
         WebElement webElementEditorContacts = driver.findElement(xPathlinkEditorContacts);
-        ExpectedCondition<WebElement> webElementExpectedCondition =
-                ExpectedConditions.presenceOfElementLocated(xPathlinkEditorContacts);
-        webElementEditorContacts.click();
+         webElementEditorContacts.click();
         String expectedEditorContactLink = "https://people.onliner.by/contacts";
         String actualEditorContactsLink = driver.getCurrentUrl();
         Assertions.assertEquals(expectedEditorContactLink, actualEditorContactsLink);
