@@ -25,7 +25,7 @@ public class FT003Test {
 
     @Test
     public void testWhenUserClickVacanciesThenVacanciesPageOpened() {
-        String aVacanciesXPath = "//a[@href='https://blog.onliner.by/vacancy']";
+        String aVacanciesXPath = "//a[contains(text(),'Вакансии')]";
         By aVacanciesBy = By.xpath(aVacanciesXPath);
         WebElement aVacanciesWebElement = driver.findElement(aVacanciesBy);
         aVacanciesWebElement.click();
