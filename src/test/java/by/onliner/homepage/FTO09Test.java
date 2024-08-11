@@ -1,4 +1,4 @@
-package by.onliner.footerpages;
+package by.onliner.homepage;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
