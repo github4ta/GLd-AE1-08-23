@@ -27,7 +27,7 @@ public class FT002Test {
         String linkEditorContacts = "//a[contains(text(),'Контакты редакции')]";
         By xPathlinkEditorContacts = By.xpath(linkEditorContacts);
         WebElement webElementEditorContacts = driver.findElement(xPathlinkEditorContacts);
-         webElementEditorContacts.click();
+        webElementEditorContacts.click();
         String expectedEditorContactLink = "https://people.onliner.by/contacts";
         String actualEditorContactsLink = driver.getCurrentUrl();
         Assertions.assertEquals(expectedEditorContactLink, actualEditorContactsLink);
