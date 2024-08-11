@@ -26,10 +26,10 @@ public class FT005Test{
 
     @Test
     public void testWhenUserClickSiteRulesThenSiteRulesOpened(){
-        String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
-        By aUserAgreementBy = By.xpath(aUserAgreementXPath);
-        WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
-        aUserAgreementWebElement.click();
+        String aSiteRulesXPath = "//a[@href='https://blog.onliner.by/siterules']";
+        By aSiteRulesBy = By.xpath(aSiteRulesXPath);
+        WebElement aSiteRulesWebElement = driver.findElement(aSiteRulesBy);
+        aSiteRulesWebElement.click();
 
         String expectedSiteRulesURL = "https://blog.onliner.by/siterules";
         String actualSiteRulesURL = driver.getCurrentUrl();
