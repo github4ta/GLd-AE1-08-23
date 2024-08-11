@@ -23,11 +23,13 @@ public class FT006Test {
     @Test
     public void testWhenUserClickPublicAgreementsThenPublicAgreementsPageOpened() {
         String referencePublicAgreementsXPath = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
-        WebElement referencePublicAgreementsWebElement = driver.findElement(By.xpath(referencePublicAgreementsXPath));
+        By referencePublicAgreementsBy = By.xpath(referencePublicAgreementsXPath);
+        WebElement referencePublicAgreementsWebElement = driver.findElement(referencePublicAgreementsBy);
         referencePublicAgreementsWebElement.click();
 
         String titleFieldPublicAgreementsPageXPath = "//div[@class='news-header__title']";
-        WebElement titleFieldPublicAgreementsPageWebElement = driver.findElement(By.xpath(titleFieldPublicAgreementsPageXPath));
+        By titleFieldPublicAgreementsPageBy = By.xpath(titleFieldPublicAgreementsPageXPath);
+        WebElement titleFieldPublicAgreementsPageWebElement = driver.findElement(titleFieldPublicAgreementsPageBy);
         String actualFieldText = titleFieldPublicAgreementsPageWebElement.getText();
         String exceptedFieldText = "Публичные договоры";
 
