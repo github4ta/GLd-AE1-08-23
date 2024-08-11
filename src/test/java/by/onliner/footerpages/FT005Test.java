@@ -10,12 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class FT005Test{
+public class FT005Test {
     private WebDriver driver;
     private final String BASE_URL = "https://www.onliner.by/";
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
         driver = new ChromeDriver(options);
@@ -24,7 +24,7 @@ public class FT005Test{
     }
 
     @Test
-    public void testWhenUserClickSiteRulesThenSiteRulesOpened(){
+    public void testWhenUserClickSiteRulesThenSiteRulesOpened() {
         String aSiteRulesXPath = "//a[@href='https://blog.onliner.by/siterules']";
         By aSiteRulesBy = By.xpath(aSiteRulesXPath);
         WebElement aSiteRulesWebElement = driver.findElement(aSiteRulesBy);
@@ -44,7 +44,7 @@ public class FT005Test{
     }
 
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
