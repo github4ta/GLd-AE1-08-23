@@ -1,4 +1,4 @@
-package by.itacademy.bazhenava;
+package by.onliner.itacademy.pavelyatsevich;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -10,30 +10,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SiteTest {
-    static WebDriver driver;
+    WebDriver driver;
 
     @BeforeEach
     public void setupDriver() {
-        String webAddress = "https://psychologists.taplink.ws";
+        String webAddress = "https://taplink.cc/sublimasha";
         driver = new ChromeDriver();
         driver.get(webAddress);
     }
 
     @Test
-    public void openAndDownloadSite() {
-        String openAndDownloadTextXPath = "//span[contains(text(), 'Taplink.ru')]";
-        By openAndDownloadTextBy = By.xpath(openAndDownloadTextXPath);
-        WebElement openAndDownloadWebElement = driver.findElement(openAndDownloadTextBy);
-
-        String actualTextMessage = openAndDownloadWebElement.getText();
+    public void openSiteTest() {
+        String fieldSiteFooterTextXPath = "//span[contains(text(), 'Taplink.ru']";
+        By fieldSiteFooterTextBy = By.xpath(fieldSiteFooterTextXPath);
+        WebElement fieldSiteFooterTextWebElement = driver.findElement(fieldSiteFooterTextBy);
+        String actualTextMessage = fieldSiteFooterTextWebElement.getText();
         String expectedTextMessage = "Taplink.ru";
 
         Assertions.assertEquals(expectedTextMessage, actualTextMessage);
     }
 
     @AfterEach
-    public void teardown() throws InterruptedException {
-        Thread.sleep(3000);
+    public void teardown() {
         driver.quit();
     }
 }
