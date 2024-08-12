@@ -31,7 +31,7 @@ public class FooterTest {
         WebElement footerWebElement = driver.findElement(footerElementBy);
 
         String actualText = footerWebElement.getText();
-        String expectedText = "Контакты редакции";
+        String expectedText = "РљРѕРЅС‚Р°РєС‚С‹ СЂРµРґР°РєС†РёРё";
         Assertions.assertEquals(expectedText, actualText);
     }
 
@@ -41,9 +41,23 @@ public class FooterTest {
         By aUserAgreementBy = By.xpath(aUserAgreementXPath);
         WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
 
-        String expectedUserAgreementText = "Пользовательское соглашение";
+        String expectedUserAgreementText = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРµ СЃРѕРіР»Р°С€РµРЅРёРµ";
         String actualUserAgreementText = aUserAgreementWebElement.getText();
         Assertions.assertEquals(expectedUserAgreementText, actualUserAgreementText);
+    }
+
+    @Test
+    public void testHPFT006() {
+        Waiters.waitFor(3);
+        //String xPathPublicAgreement = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
+        String xPathPublicAgreement = "//a[contains(text(), 'РџСѓР±Р»РёС‡РЅС‹Рµ РґРѕРіРѕРІРѕСЂС‹')]";
+        By byFooterPublicAgreement = By.xpath(xPathPublicAgreement);
+        WebElement webElementPublicAgreement = driver.findElement(byFooterPublicAgreement);
+
+        String expectedTextPublicAgreement = "РџСѓР±Р»РёС‡РЅС‹Рµ РґРѕРіРѕРІРѕСЂС‹";
+        String actualResultPublicAgreement = webElementPublicAgreement.getText();
+        Assertions.assertEquals(expectedTextPublicAgreement, actualResultPublicAgreement);
+
     }
 
     @Test
@@ -52,7 +66,7 @@ public class FooterTest {
         By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
         WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
 
-        String expectedText = "Политика обработки персональных данных";
+        String expectedText = "РџРѕР»РёС‚РёРєР° РѕР±СЂР°Р±РѕС‚РєРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…";
         String actualText = aPrivacyPolicyWebElement.getText();
         Assertions.assertEquals(expectedText, actualText);
     }
@@ -62,7 +76,7 @@ public class FooterTest {
         String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
         WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
         String actualText = footerButtonAdvertisingWebElement.getText();
-        String expectedText = "Реклама";
+        String expectedText = "Р РµРєР»Р°РјР°";
 
         Assertions.assertEquals(expectedText, actualText);
     }
@@ -73,7 +87,7 @@ public class FooterTest {
         By aRefundRulesBy = By.xpath(aRefundRulesXPath);
         WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
 
-        String expectedRefundRulesText = "Правила возврата";
+        String expectedRefundRulesText = "РџСЂР°РІРёР»Р° РІРѕР·РІСЂР°С‚Р°";
         String actualRefundRulesText = aRefundRulesWebElement.getText();
         Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
     }
