@@ -16,8 +16,8 @@ public class FT007Test {
     @BeforeEach
     public void beforeEach() {
         driver = new ChromeDriver();
-        driver.get(urlBase);
         driver.manage().window().maximize();
+        driver.get(urlBase);
     }
 
     @Test
