@@ -1,4 +1,4 @@
-package by.onliner.homepage.footerpages;
+package by.onliner.footerpages;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FTO09Test {
+public class FT009Test {
     private WebDriver driver;
     private final String BASE_URL = "https://www.onliner.by/";
 
