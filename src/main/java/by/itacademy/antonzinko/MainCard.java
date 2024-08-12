@@ -1,7 +1,7 @@
-package by.itacademy;
+package by.itacademy.antonzinko;
 
-import by.itacademy.card.Card;
-import by.itacademy.card.Cards;
+import by.itacademy.antonzinko.card.Card;
+import by.itacademy.antonzinko.card.Cards;
 
 public class MainCard {
     public static void main(String[] args) {

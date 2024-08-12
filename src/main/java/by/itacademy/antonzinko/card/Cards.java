@@ -1,4 +1,4 @@
-package by.itacademy.card;
+package by.itacademy.antonzinko.card;
 
 import com.github.javafaker.Faker;
 

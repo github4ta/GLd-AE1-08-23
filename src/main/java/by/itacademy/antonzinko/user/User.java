@@ -1,4 +1,4 @@
-package by.itacademy.user;
+package by.itacademy.antonzinko.user;
 
 public class User {
     private String login;

@@ -1,4 +1,4 @@
-package by.itacademy.geometry;
+package by.itacademy.antonzinko.geometry;
 
 public class Rectangle {
     private double length;

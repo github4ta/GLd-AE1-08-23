@@ -1,4 +1,4 @@
-package by.itacademy.card;
+package by.itacademy.antonzinko.card;
 
 import java.util.Objects;
 
