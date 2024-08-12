@@ -1,6 +1,5 @@
 package by.onliner.footerpages;
 
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,13 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
 public class FT007Test {
     private WebDriver driver;
-     private final String urlBase = "https://www.onliner.by/";
+    private final String urlBase = "https://www.onliner.by/";
 
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         driver = new ChromeDriver();
         driver.get(urlBase);
         driver.manage().window().maximize();
@@ -40,7 +38,7 @@ public class FT007Test {
     }
 
     @AfterEach
-    public void afterEach(){
+    public void afterEach() {
         driver.quit();
     }
 }
