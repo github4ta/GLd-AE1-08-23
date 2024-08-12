@@ -23,13 +23,13 @@ public class FT007Test {
     @Test
     public void testWhenUserClickPrivacyPoliticThenPageOpened() {
 
-        String buttonUserPrivacyPolitic = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
-        By buttonPrivacyPoliticBy = By.xpath(buttonUserPrivacyPolitic);
-        WebElement buttonUPrivacyPoliticWebElement = driver.findElement(buttonPrivacyPoliticBy);
-        buttonUPrivacyPoliticWebElement.click();
+        String buttonPrivacyPolitic = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+        By buttonPrivacyPoliticBy = By.xpath(buttonPrivacyPolitic);
+        WebElement buttonPrivacyPoliticWebElement = driver.findElement(buttonPrivacyPoliticBy);
+        buttonPrivacyPoliticWebElement.click();
 
-        String privacyPolitictXpath = "//div[@class='news-header__title']/h1 ";
-        By privacyPoliticBy = By.xpath(privacyPolitictXpath);
+        String privacyPoliticXpath = "//div[@class='news-header__title']/h1 ";
+        By privacyPoliticBy = By.xpath(privacyPoliticXpath);
         WebElement privacyPoliticWebElement = driver.findElement(privacyPoliticBy);
         String actualText = privacyPoliticWebElement.getText();
         String expectedText = "Политика обработки персональных данных ООО «Онлайнер»";
