@@ -1,6 +1,5 @@
 package by.onliner.footerpages;
 
-import by.onliner.homepage.FooterTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,12 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class FT005Test{
+public class FT005Test {
     private WebDriver driver;
     private final String BASE_URL = "https://www.onliner.by/";
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen");
         driver = new ChromeDriver(options);
@@ -25,11 +24,11 @@ public class FT005Test{
     }
 
     @Test
-    public void testWhenUserClickSiteRulesThenSiteRulesOpened(){
-        String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
-        By aUserAgreementBy = By.xpath(aUserAgreementXPath);
-        WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
-        aUserAgreementWebElement.click();
+    public void testWhenUserClickSiteRulesThenSiteRulesOpened() {
+        String aSiteRulesXPath = "//a[@href='https://blog.onliner.by/siterules']";
+        By aSiteRulesBy = By.xpath(aSiteRulesXPath);
+        WebElement aSiteRulesWebElement = driver.findElement(aSiteRulesBy);
+        aSiteRulesWebElement.click();
 
         String expectedSiteRulesURL = "https://blog.onliner.by/siterules";
         String actualSiteRulesURL = driver.getCurrentUrl();
@@ -39,13 +38,13 @@ public class FT005Test{
         By titleSiteRulesTextBy = By.xpath(titleSiteRulesTextXPath);
         WebElement titleSiteRulesTextWebElement = driver.findElement(titleSiteRulesTextBy);
 
-        String expectedTitleText = "Пользовательское соглашение/Правила";
-        String actualTitleText = titleSiteRulesTextWebElement.getText();
-        Assertions.assertEquals(expectedTitleText, actualTitleText);
+        String expectedTitleSiteRulesText = "Пользовательское соглашение/Правила";
+        String actualTitleSiteRulesText = titleSiteRulesTextWebElement.getText();
+        Assertions.assertEquals(expectedTitleSiteRulesText, actualTitleSiteRulesText);
     }
 
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
