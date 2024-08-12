@@ -30,8 +30,8 @@ public class SiteTest {
         By fieldWithEmailBy = By.xpath(fieldWithEmailXPath);
         WebElement fieldWithEmailWebElement = driver.findElement(fieldWithEmailBy);
 
-        String actualVisibleEmail = fieldWithEmailWebElement.getText();
-        String expectedVisibleEmail = "irina.chekanova.astrolog@gmail.com";
-        Assertions.assertEquals(expectedVisibleEmail, actualVisibleEmail);
+        String actualVisibleEmailText = fieldWithEmailWebElement.getText();
+        String expectedVisibleEmailText = "irina.chekanova.astrolog@gmail.com";
+        Assertions.assertEquals(expectedVisibleEmailText, actualVisibleEmailText);
     }
 }
