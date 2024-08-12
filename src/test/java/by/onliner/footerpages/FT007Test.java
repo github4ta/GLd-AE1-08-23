@@ -23,8 +23,8 @@ public class FT007Test {
     @Test
     public void testWhenUserClickPrivacyPoliticThenPageOpened() {
 
-        String buttonPrivacyPolitic = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
-        By buttonPrivacyPoliticBy = By.xpath(buttonPrivacyPolitic);
+        String buttonPrivacyPoliticXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
+        By buttonPrivacyPoliticBy = By.xpath(buttonPrivacyPoliticXPath);
         WebElement buttonPrivacyPoliticWebElement = driver.findElement(buttonPrivacyPoliticBy);
         buttonPrivacyPoliticWebElement.click();
 
