@@ -1,4 +1,5 @@
 package by.itacademy.dmitriymedvedev;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,12 +26,12 @@ public class SiteTest {
 
     @Test
     public void test1() {
-
-        String fieldWithEmailXPath = "//a[@href=\"mailto:irina.chekanova.astrolog@gmail.com\"]";
+        String fieldWithEmailXPath = "//a[@href=\'mailto:irina.chekanova.astrolog@gmail.com\']";
         By fieldWithEmailBy = By.xpath(fieldWithEmailXPath);
-        WebElement fieldWithEmailByWebElement = driver.findElement(fieldWithEmailBy);
+        WebElement fieldWithEmailWebElement = driver.findElement(fieldWithEmailBy);
 
-        String actual = fieldWithEmailByWebElement.getText();
-        Assertions.assertEquals("irina.chekanova.astrolog@gmail.com",actual);
+        String actualVisibleEmail = fieldWithEmailWebElement.getText();
+        String expectedVisibleEmail = "irina.chekanova.astrolog@gmail.com";
+        Assertions.assertEquals(expectedVisibleEmail, actualVisibleEmail);
     }
 }
