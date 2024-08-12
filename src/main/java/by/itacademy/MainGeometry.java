@@ -1,7 +1,7 @@
-package by.itacademy.antonzinko;
+package by.itacademy;
 
-import by.itacademy.antonzinko.geometry.Circle;
-import by.itacademy.antonzinko.geometry.Rectangle;
+import by.itacademy.geometry.Circle;
+import by.itacademy.geometry.Rectangle;
 
 public class MainGeometry {
     public static void main(String[] args) {

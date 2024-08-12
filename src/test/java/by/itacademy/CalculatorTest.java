@@ -1,4 +1,4 @@
-package by.itacademy.antonzinko;
+package by.itacademy;
 
 import by.itacademy.antonzinko.calculator.Calculator;
 import org.junit.jupiter.api.Assertions;

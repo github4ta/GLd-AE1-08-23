@@ -1,4 +1,4 @@
-package by.itacademy.antonzinko.user;
+package by.itacademy.user;
 
 import com.github.javafaker.Faker;
 

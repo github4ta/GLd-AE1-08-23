@@ -1,4 +1,4 @@
-package by.itacademy.antonzinko.geometry;
+package by.itacademy.geometry;
 
 import java.util.Objects;
 
