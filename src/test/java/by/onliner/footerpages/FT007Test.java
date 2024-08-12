@@ -12,8 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class FT007Test {
-    WebDriver driver;
-    final String urlBase = "https://www.onliner.by/";
+    private WebDriver driver;
+    private final String urlBase = "https://www.onliner.by/";
 
     @BeforeEach
     public void beforeEach(){
