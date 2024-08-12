@@ -26,7 +26,7 @@ public class SiteTest {
 
     @Test
     public void test1() {
-        String fieldWithEmailXPath = "//a[@href=\'mailto:irina.chekanova.astrolog@gmail.com\']";
+        String fieldWithEmailXPath = "//a[@href='mailto:irina.chekanova.astrolog@gmail.com']";;
         By fieldWithEmailBy = By.xpath(fieldWithEmailXPath);
         WebElement fieldWithEmailWebElement = driver.findElement(fieldWithEmailBy);
 
