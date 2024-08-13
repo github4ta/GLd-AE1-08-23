@@ -19,6 +19,6 @@ public class BaseTest {
 
     @AfterEach
     public void afterEach() {
-
+        driver.quit();
     }
 }
