@@ -23,5 +23,8 @@ public class ST001Test extends BaseTest {
             String expectedCatalogPageHeader = "Каталог";
 
             Assertions.assertEquals(expectedCatalogPageHeader, actualCatalogPageHeader);
+            String expectedCatalogURL = "https://catalog.onliner.by/";
+            String actualCatalogURL = driver.getCurrentUrl();
+            Assertions.assertEquals(expectedCatalogURL, actualCatalogURL);
         }
     }
