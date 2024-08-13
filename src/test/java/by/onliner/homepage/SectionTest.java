@@ -17,12 +17,12 @@ public class SectionTest extends BaseTest {
         buttonForumWebElement.click();
 
         Waiters.waitFor(1);
-        String forumXpath = "//*[@id=\"minWidth\"]/div/div[2]/div[2]/div/div[2]/h1";
+        String forumXpath = "//*[@id=\'minWidth\']/div/div[2]/div[2]/div/div[2]/h1";
         By forumBy = By.xpath(forumXpath);
         WebElement forumWebElement = driver.findElement(forumBy);
-        String actualText = forumWebElement.getText();
-        String expectedText = "Форум";
+        String actualForumText = forumWebElement.getText();
+        String expectedForumText = "Форум";
 
-        Assertions.assertEquals(expectedText, actualText);
+        Assertions.assertEquals(expectedForumText, actualForumText);
     }
 }
