@@ -10,21 +10,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class FT005Test {
-    private WebDriver driver;
+public class FT005Test extends BaseTest{
     private final String BASE_URL = "https://www.onliner.by/";
-
-    @BeforeEach
-    public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen");
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.get(BASE_URL);
-    }
 
     @Test
     public void testWhenUserClickSiteRulesThenSiteRulesOpened() {
+        driver.get(BASE_URL);
+
         String aSiteRulesXPath = "//a[@href='https://blog.onliner.by/siterules']";
         By aSiteRulesBy = By.xpath(aSiteRulesXPath);
         WebElement aSiteRulesWebElement = driver.findElement(aSiteRulesBy);
@@ -41,10 +33,5 @@ public class FT005Test {
         String expectedTitleSiteRulesText = "Пользовательское соглашение/Правила";
         String actualTitleSiteRulesText = titleSiteRulesTextWebElement.getText();
         Assertions.assertEquals(expectedTitleSiteRulesText, actualTitleSiteRulesText);
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
     }
 }
