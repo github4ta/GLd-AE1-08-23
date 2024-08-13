@@ -15,8 +15,6 @@ public class FT005Test extends BaseTest{
 
     @Test
     public void testWhenUserClickSiteRulesThenSiteRulesOpened() {
-        driver.get(BASE_URL);
-
         String aSiteRulesXPath = "//a[@href='https://blog.onliner.by/siterules']";
         By aSiteRulesBy = By.xpath(aSiteRulesXPath);
         WebElement aSiteRulesWebElement = driver.findElement(aSiteRulesBy);
