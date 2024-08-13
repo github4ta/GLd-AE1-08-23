@@ -8,22 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FT001Test {
+public class FT001Test extends BaseTest {
 
-     private WebDriver driver;
-     private final String BASE_URL = "https://www.onliner.by/";
-
-
-    @BeforeEach
-    public void beforeEach() {
-        driver = new ChromeDriver();
-        driver.get("https://www.onliner.by/");
-    }
-
-    @AfterEach
-    public void afterEach() {
-        driver.quit();
-    }
 
     @Test
     public void testWhenUserAboutLinkThenAboutPageAboutOpened() {
