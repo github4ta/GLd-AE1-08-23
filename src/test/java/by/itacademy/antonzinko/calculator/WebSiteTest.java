@@ -8,19 +8,17 @@ import org.openqa.selenium.WebElement;
 public class WebSiteTest extends BaseTest {
     @Test
     public void test() {
-        String buttonCalculateXPath = "//input[@type='submit']";
-        By buttonCalculateBy = By.xpath(buttonCalculateXPath);
-        driver.findElement(buttonCalculateBy);
-        WebElement buttonCalculateWebElement = driver.findElement(buttonCalculateBy);
+        String linkBackgroundXPath = "//input[@type='submit']";
+        By linkBackgroundBy = By.xpath(linkBackgroundXPath);
+        WebElement linkBackgroundWebElement = driver.findElement(linkBackgroundBy);
 
-        buttonCalculateWebElement.click();
+        linkBackgroundWebElement.click();
 
-        //Then - Assert
-        String errorMessageXPath = "//b";
-        By errorMessageBy = By.xpath(errorMessageXPath);
-        WebElement errorMessageWebElement = driver.findElement(errorMessageBy);
+        String titleSmartphoneXPath = "//h1[@class='catalog-masthead__title js-nav-header']";
+        By titleSmartphoneBy = By.xpath(titleSmartphoneXPath);
+        WebElement titleSmartphoneWebElement = driver.findElement(titleSmartphoneBy);
 
-        String actualErrorMessage = errorMessageWebElement.getText();
+        String actualErrorMessage = titleSmartphoneWebElement.getText();
         String expectedErrorMessage = "Не указано имя.\n" +
                 "Рост должен быть в диапазоне 50-300 см.\n" +
                 "Вес должен быть в диапазоне 3-500 кг.\n" +

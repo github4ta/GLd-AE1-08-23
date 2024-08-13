@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
     WebDriver driver;
-    final String BASE_URL = "https://svyatoslav.biz/testlab/wt/index.php";
+    final String BASE_URL = "https://www.onliner.by/";
 
     @BeforeEach
     public void beforeEach() {
