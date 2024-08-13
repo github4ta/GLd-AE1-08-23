@@ -14,7 +14,7 @@ public class BaseTest {
     public void beforeEach() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(BASE_URL);  // Переход на базовый URL
+        driver.get(BASE_URL);
     }
 
     @AfterEach

@@ -3,7 +3,6 @@ package by.onliner.footerpages;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FT003Test extends by.onliner.homepage.BaseTest {
