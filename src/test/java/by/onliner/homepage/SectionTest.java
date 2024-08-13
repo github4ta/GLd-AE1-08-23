@@ -17,8 +17,8 @@ public class SectionTest extends BaseTest {
         String menuOptionXpath = "//li[contains(@class,'b-main-navigation__item')]";
         By menuOptionBy = By.xpath(menuOptionXpath);
         List<WebElement> menuOptionWebElements = topMenuWebElement.findElements(menuOptionBy);
-        WebElement buttonBaraholka = menuOptionWebElements.get(5);
-        buttonBaraholka.click();
+        WebElement buttonBaraholkaWebElement = menuOptionWebElements.get(5);
+        buttonBaraholkaWebElement.click();
 
         String expectedBaraholkaURL = "https://baraholka.onliner.by/";
         String actualBaraholkaURL = driver.getCurrentUrl();
