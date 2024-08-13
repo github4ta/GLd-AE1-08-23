@@ -7,19 +7,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
 
-    WebDriver driver;
+    protected WebDriver driver;
     final String BASE_URL = "https://www.onliner.by/";
 
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(BASE_URL);
+        driver.get(BASE_URL);  // Переход на базовый URL
     }
 
     @AfterEach
     public void afterEach() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
-
 }

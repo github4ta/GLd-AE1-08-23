@@ -1,38 +1,27 @@
 package by.onliner.footerpages;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-public class FT003Test {
-    private WebDriver driver;
-    private final String BASE_URL = "https://www.onliner.by/";
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    @BeforeEach
-    public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen");
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.get(BASE_URL);
-    }
+public class FT003Test extends by.onliner.homepage.BaseTest {
 
     @Test
     public void testWhenUserClickVacanciesThenVacanciesPageOpened() {
+
+        assert driver != null : "WebDriver не был инициализирован в BaseTest";
+
         String aVacanciesXPath = "//a[contains(text(),'Вакансии')]";
         By aVacanciesBy = By.xpath(aVacanciesXPath);
         WebElement aVacanciesWebElement = driver.findElement(aVacanciesBy);
+
         aVacanciesWebElement.click();
 
         String expectedVacanciesURL = "https://blog.onliner.by/vacancy";
         String actualVacanciesURL = driver.getCurrentUrl();
-        Assertions.assertEquals(expectedVacanciesURL, actualVacanciesURL);
+        assertEquals(expectedVacanciesURL, actualVacanciesURL, "URL страницы вакансий неверный");
 
         String titleVacanciesTextXPath = "//div[@class='news-header__title']/h1";
         By titleVacanciesTextBy = By.xpath(titleVacanciesTextXPath);
@@ -40,11 +29,6 @@ public class FT003Test {
 
         String expectedTitleVacanciesText = "Вакансии";
         String actualTitleVacanciesText = titleVacanciesTextWebElement.getText();
-        Assertions.assertEquals(expectedTitleVacanciesText, actualTitleVacanciesText);
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
+        assertEquals(expectedTitleVacanciesText, actualTitleVacanciesText, "Текст заголовка страницы вакансий неверный");
     }
 }
