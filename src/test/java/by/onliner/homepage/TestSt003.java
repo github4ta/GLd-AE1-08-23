@@ -17,7 +17,6 @@ public class TestSt003 extends BaseTest {
         By menuOptionBy = By.xpath(menuOptionXpath);
         List<WebElement> menuOptionWebElements = topMenuWebElement.findElements(menuOptionBy);
 
-        // Find the "Автобарахолка" button (update the index if necessary based on the actual page structure)
         WebElement buttonAutobaraholkaWebElement = null;
         for (WebElement element : menuOptionWebElements) {
             if (element.getText().contains("Автобарахолка")) {
