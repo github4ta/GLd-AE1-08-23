@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class FT003Test extends BaseTest {
 
-    private final String BASE_URL = "https://www.onliner.by/";
-
     @Test
     public void testWhenUserClickVacanciesThenVacanciesPageOpened() {
 
