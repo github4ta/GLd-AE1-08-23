@@ -1,26 +1,12 @@
 package by.onliner.footerpages;
 
 import by.onliner.Waiters;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FT008Test {
-
-    private WebDriver driver;
-    private final String BASE_URL = "https://www.onliner.by/";
-
-    @BeforeEach
-    public void beforeEach() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(BASE_URL);
-    }
+public class FT008Test extends BaseTest {
 
     @Test
     public void testWhenClickButtonUserSupportThenUserSupportOpened() {
@@ -37,10 +23,5 @@ public class FT008Test {
         String expectedText = "Запрос в службу поддержки";
 
         Assertions.assertEquals(expectedText, actualText);
-    }
-
-    @AfterEach
-    public void afterEach() {
-        driver.quit();
     }
 }
