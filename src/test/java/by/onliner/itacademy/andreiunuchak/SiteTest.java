@@ -1,4 +1,4 @@
-package by.itacademy.andreiunuchak;
+package by.onliner.itacademy.andreiunuchak;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;

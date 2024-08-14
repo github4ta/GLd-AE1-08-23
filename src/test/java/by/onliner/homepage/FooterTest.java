@@ -1,5 +1,6 @@
 package by.onliner.homepage;
 
+import by.onliner.Waiters;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,6 +24,7 @@ public class FooterTest {
     }
 
     @Test
+onliner-home-HPFT004
     public void testHPFT004() {
         String footerLinkManifestPath = "//a[@href='https://blog.onliner.by/manifest']";
         By footerLinkManifestBy = By.xpath(footerLinkManifestPath);
@@ -34,6 +36,21 @@ public class FooterTest {
     }
 
     @Test
+
+    public void testHPFT002() {
+        driver.manage().window().maximize();
+        Waiters.waitFor(2);
+        String footerElementXpath = "//a[@href ='https://people.onliner.by/contacts']";
+        By footerElementBy = By.xpath(footerElementXpath);
+        WebElement footerWebElement = driver.findElement(footerElementBy);
+
+        String actualText = footerWebElement.getText();
+        String expectedText = "Контакты редакции";
+        Assertions.assertEquals(expectedText, actualText);
+    }
+
+   @Test
+master-selenium
     public void testHPFT005() {
         String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
         By aUserAgreementBy = By.xpath(aUserAgreementXPath);
@@ -42,6 +59,20 @@ public class FooterTest {
         String expectedUserAgreementText = "Пользовательское соглашение";
         String actualUserAgreementText = aUserAgreementWebElement.getText();
         Assertions.assertEquals(expectedUserAgreementText, actualUserAgreementText);
+    }
+
+    @Test
+    public void testHPFT006() {
+        Waiters.waitFor(3);
+        //String xPathPublicAgreement = "//a[@href='https://blog.onliner.by/publichnye-dogovory']";
+        String xPathPublicAgreement = "//a[contains(text(), 'Публичные договоры')]";
+        By byFooterPublicAgreement = By.xpath(xPathPublicAgreement);
+        WebElement webElementPublicAgreement = driver.findElement(byFooterPublicAgreement);
+
+        String expectedTextPublicAgreement = "Публичные договоры";
+        String actualResultPublicAgreement = webElementPublicAgreement.getText();
+        Assertions.assertEquals(expectedTextPublicAgreement, actualResultPublicAgreement);
+
     }
 
     @Test
@@ -80,5 +111,4 @@ public class FooterTest {
     public void afterEach() {
         driver.quit();
     }
-
 }
