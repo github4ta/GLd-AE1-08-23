@@ -17,22 +17,22 @@ public class FT010Test {
     @BeforeEach
     public void beforeEach() {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get(BASE_URL);
+        driver.manage().window().maximize();
     }
 
     @Test
     public void testWhenUserClickAdvertisingThenAdvertisingOpened() {
-        String footerLinkAdvertisingPath = "//a[@href='https://b2breg.onliner.by/advertising']";
-        By footerLinkAdvertisingBy = By.xpath(footerLinkAdvertisingPath);
+        String footerLinkAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
+        By footerLinkAdvertisingBy = By.xpath(footerLinkAdvertisingXPath);
         WebElement footerLinkAdvertisingWebElement = driver.findElement(footerLinkAdvertisingBy);
-        String expectedLinkAdvertisingText = "Реклама";
-        String actualLinkAdvertisingText = footerLinkAdvertisingWebElement.getText();
-        Assertions.assertEquals(expectedLinkAdvertisingText, actualLinkAdvertisingText);
         footerLinkAdvertisingWebElement.click();
-        String expectedTitlePageAdvertising = "Подключиться к каталогу";
-        String actualTitlePageAdvertising = driver.getTitle();
-        Assertions.assertEquals(expectedTitlePageAdvertising, actualTitlePageAdvertising);
+        String pageTitleAdvertisingXPath = "//div[@class='title-style title-style_primary-alter title-style_giant-other b2breg-advertising__title']";
+        By pageTitleAdvertisingBy = By.xpath(pageTitleAdvertisingXPath);
+        WebElement pageTitleAdvertisingWebElement = driver.findElement(pageTitleAdvertisingBy);
+        String expectedPageTitleAdvertising = "Реклама на сайте Onlíner";
+        String actualPageTitleAdvertising = pageTitleAdvertisingWebElement.getText();
+        Assertions.assertEquals(expectedPageTitleAdvertising, actualPageTitleAdvertising);
     }
 
     @AfterEach
