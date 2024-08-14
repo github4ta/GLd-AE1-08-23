@@ -1,4 +1,4 @@
-package by.itacademy.melniksergey;
+package by.onliner.itacademy.melniksergey;
 
 
 import org.junit.jupiter.api.AfterEach;
