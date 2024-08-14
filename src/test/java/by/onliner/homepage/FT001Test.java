@@ -1,4 +1,6 @@
-package by.onliner.footerpages;
+package by.onliner.homepage;
+
+import by.onliner.homepage.BaseTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
