@@ -11,7 +11,7 @@ public class BaseTest {
     final String BASE_URL = "https://www.onliner.by/";
 
     @BeforeEach
-    public void beforeEach() {
+    public void beforeEach(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(BASE_URL);
