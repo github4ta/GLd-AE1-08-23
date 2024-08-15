@@ -1,4 +1,4 @@
-package by.onliner.footerpages;
+package by.onliner.homepage;
 
 import by.onliner.Waiters;
 import org.junit.jupiter.api.AfterEach;
@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FT008Test {
+public class HPFT008 {
 
     private WebDriver driver;
     private final String BASE_URL = "https://www.onliner.by/";
@@ -23,22 +23,17 @@ public class FT008Test {
     }
 
     @Test
-    public void testWhenClickButtonUserSupportThenUserSupportOpened() {
+    public void testHPFT008() {
+        driver.manage().window().maximize();
         Waiters.waitFor(2);
-        String buttonUserSupportXpath = "//a[@href='https://support.onliner.by']";
-        By buttonUserSupportBy = By.xpath(buttonUserSupportXpath);
-        WebElement buttonUserSupportWebElement = driver.findElement(buttonUserSupportBy);
-        buttonUserSupportWebElement.click();
-        Waiters.waitFor(2);
-        String userSupportXpath = "//div[@id='main']/div/h1";
-        By userSupportBy = By.xpath(userSupportXpath);
-        WebElement userSupportWebElement = driver.findElement(userSupportBy);
-        String actualText = userSupportWebElement.getText();
-        String expectedText = "Запрос в службу поддержки";
+        String footerElementXpath = "/html/body/div[1]/footer/div/div/div/div[1]/ul/li[10]/a";
+        By footerElementBy = By.xpath(footerElementXpath);
+        WebElement footerWebElement = driver.findElement(footerElementBy);
 
+        String actualText = footerWebElement.getText();
+        String expectedText = "Поддержка пользователей";
         Assertions.assertEquals(expectedText, actualText);
     }
-
     @AfterEach
     public void afterEach() {
         driver.quit();
