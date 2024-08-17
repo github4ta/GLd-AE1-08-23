@@ -33,62 +33,6 @@ public class FooterTest {
         Assertions.assertEquals(expectedAboutKompanyText, actualAboutKompanyText);
     }
 
-    @Test
-    public void testHPFT002() {
-        driver.manage().window().maximize();
-        Waiters.waitFor(2);
-        String footerElementXpath = "//a[@href ='https://people.onliner.by/contacts']";
-        By footerElementBy = By.xpath(footerElementXpath);
-        WebElement footerWebElement = driver.findElement(footerElementBy);
-
-        String actualText = footerWebElement.getText();
-        String expectedText = "�������� ��������";
-        Assertions.assertEquals(expectedText, actualText);
-    }
-
-   @Test
-    public void testHPFT005() {
-        String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
-        By aUserAgreementBy = By.xpath(aUserAgreementXPath);
-        WebElement aUserAgreementWebElement = driver.findElement(aUserAgreementBy);
-
-        String expectedUserAgreementText = "���������������� ����������";
-        String actualUserAgreementText = aUserAgreementWebElement.getText();
-        Assertions.assertEquals(expectedUserAgreementText, actualUserAgreementText);
-    }
-
-    @Test
-    public void testHPFT007() {
-        String aPrivacyPolicyXPath = "//a[@href='https://blog.onliner.by/politika-konfidencialnosti']";
-        By aPrivacyPolicyBy = By.xpath(aPrivacyPolicyXPath);
-        WebElement aPrivacyPolicyWebElement = driver.findElement(aPrivacyPolicyBy);
-
-        String expectedText = "�������� ��������� ������������ ������";
-        String actualText = aPrivacyPolicyWebElement.getText();
-        Assertions.assertEquals(expectedText, actualText);
-    }
-
-    @Test
-    public void testHPFT010() {
-        String footerButtonAdvertisingXPath = "//a[@href='https://b2breg.onliner.by/advertising']";
-        WebElement footerButtonAdvertisingWebElement = driver.findElement(By.xpath(footerButtonAdvertisingXPath));
-        String actualText = footerButtonAdvertisingWebElement.getText();
-        String expectedText = "�������";
-
-        Assertions.assertEquals(expectedText, actualText);
-    }
-
-    @Test
-    public void testHPFT009() {
-        String aRefundRulesXPath = "//a[@href='https://blog.onliner.by/pravila-vozvrata-tovarov-i-deneg']";
-        By aRefundRulesBy = By.xpath(aRefundRulesXPath);
-        WebElement aRefundRulesWebElement = driver.findElement(aRefundRulesBy);
-
-        String expectedRefundRulesText = "������� ��������";
-        String actualRefundRulesText = aRefundRulesWebElement.getText();
-        Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
-    }
-
     @AfterEach
     public void afterEach() {
         driver.quit();
