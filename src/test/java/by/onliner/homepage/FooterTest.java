@@ -69,7 +69,6 @@ public class FooterTest {
         String expectedTextPublicAgreement = "Публичные договоры";
         String actualResultPublicAgreement = webElementPublicAgreement.getText();
         Assertions.assertEquals(expectedTextPublicAgreement, actualResultPublicAgreement);
-
     }
 
     @Test
