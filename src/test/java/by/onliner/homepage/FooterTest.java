@@ -24,7 +24,17 @@ public class FooterTest {
     }
 
     @Test
-onliner-home-HPFT004
+
+    public void testHPFT001() {
+        String aboutKompanyXPath = "//a[@href='https://blog.onliner.by/about'] ";
+        By aboutKompanyBy = By.xpath(aboutKompanyXPath);
+        WebElement aboutKompanyWebElement = driver.findElement(aboutKompanyBy);
+
+        String expectedAboutKompanyText =  "О компании";
+        String actualAboutKompanyText = aboutKompanyWebElement.getText();
+        Assertions.assertEquals(expectedAboutKompanyText, actualAboutKompanyText);
+    @Test
+      
     public void testHPFT004() {
         String footerLinkManifestPath = "//a[@href='https://blog.onliner.by/manifest']";
         By footerLinkManifestBy = By.xpath(footerLinkManifestPath);
@@ -105,6 +115,7 @@ master-selenium
         String expectedRefundRulesText = "Правила возврата";
         String actualRefundRulesText = aRefundRulesWebElement.getText();
         Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
+
     }
 
     @AfterEach
