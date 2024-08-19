@@ -24,17 +24,6 @@ public class FooterTest {
     }
 
     @Test
-
-    public void testHPFT001() {
-        String aboutKompanyXPath = "//a[@href='https://blog.onliner.by/about'] ";
-        By aboutKompanyBy = By.xpath(aboutKompanyXPath);
-        WebElement aboutKompanyWebElement = driver.findElement(aboutKompanyBy);
-
-        String expectedAboutKompanyText =  "О компании";
-        String actualAboutKompanyText = aboutKompanyWebElement.getText();
-        Assertions.assertEquals(expectedAboutKompanyText, actualAboutKompanyText);
-    @Test
-      
     public void testHPFT004() {
         String footerLinkManifestPath = "//a[@href='https://blog.onliner.by/manifest']";
         By footerLinkManifestBy = By.xpath(footerLinkManifestPath);
@@ -46,7 +35,6 @@ public class FooterTest {
     }
 
     @Test
-
     public void testHPFT002() {
         driver.manage().window().maximize();
         Waiters.waitFor(2);
@@ -60,7 +48,6 @@ public class FooterTest {
     }
 
    @Test
-master-selenium
     public void testHPFT005() {
         String aUserAgreementXPath = "//a[@href='https://blog.onliner.by/siterules']";
         By aUserAgreementBy = By.xpath(aUserAgreementXPath);
@@ -82,7 +69,6 @@ master-selenium
         String expectedTextPublicAgreement = "Публичные договоры";
         String actualResultPublicAgreement = webElementPublicAgreement.getText();
         Assertions.assertEquals(expectedTextPublicAgreement, actualResultPublicAgreement);
-
     }
 
     @Test
@@ -105,6 +91,16 @@ master-selenium
 
         Assertions.assertEquals(expectedText, actualText);
     }
+    @Test
+    public void testHPFT001() {
+        String aboutKompanyXPath = "//a[@href='https://blog.onliner.by/about'] ";
+        By aboutKompanyBy = By.xpath(aboutKompanyXPath);
+        WebElement aboutKompanyWebElement = driver.findElement(aboutKompanyBy);
+
+        String expectedAboutKompanyText =  "О компании";
+        String actualAboutKompanyText = aboutKompanyWebElement.getText();
+        Assertions.assertEquals(expectedAboutKompanyText, actualAboutKompanyText);
+    }
 
     @Test
     public void testHPFT009() {
@@ -115,7 +111,6 @@ master-selenium
         String expectedRefundRulesText = "Правила возврата";
         String actualRefundRulesText = aRefundRulesWebElement.getText();
         Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
-
     }
 
     @AfterEach
