@@ -112,7 +112,6 @@ public class FooterTest {
         String expectedRefundRulesText = "Правила возврата";
         String actualRefundRulesText = aRefundRulesWebElement.getText();
         Assertions.assertEquals(expectedRefundRulesText, actualRefundRulesText);
-
     }
 
     @AfterEach
