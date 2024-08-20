@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class FT004Test extends BaseTest{
+public class FT004Test extends FooterBaseTest {
 
     @Test
     public void testWhenUserClickManifestThenManifestOpened(){

@@ -1,5 +1,7 @@
 package by.onliner.footerpages;
 
+import by.onliner.Waiters;
+import by.onliner.homepage.HomeBaseTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,5 +41,25 @@ public class FT009Test {
     @AfterEach
     public void afterEach() {
         driver.quit();
+    }
+
+    public static class FT008Test extends HomeBaseTest {
+
+        @Test
+        public void testWhenClickLinkUserSupportThenUserSupportOpened() {
+            Waiters.waitFor(2);
+            String linkUserSupportXpath = "//a[@href='https://support.onliner.by']";
+            By linkUserSupportBy = By.xpath(linkUserSupportXpath);
+            WebElement linkUserSupportWebElement = driver.findElement(linkUserSupportBy);
+            linkUserSupportWebElement.click();
+            Waiters.waitFor(2);
+            String userSupportXpath = "//div[@id='main']/div/h1";
+            By userSupportBy = By.xpath(userSupportXpath);
+            WebElement userSupportWebElement = driver.findElement(userSupportBy);
+            String actualLinkText = userSupportWebElement.getText();
+            String expectedLinkText = "Запрос в службу поддержки";
+
+            Assertions.assertEquals(expectedLinkText, actualLinkText);
+        }
     }
 }

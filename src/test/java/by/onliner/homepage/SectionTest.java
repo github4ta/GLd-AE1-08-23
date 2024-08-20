@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class SectionTest extends BaseTest {
+public class SectionTest extends HomeBaseTest {
 
     @Test
     public void testWhenClickButtonForumThenForumOpened() {

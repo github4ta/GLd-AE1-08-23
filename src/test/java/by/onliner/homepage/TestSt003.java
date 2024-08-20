@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
-public class TestSt003 extends BaseTest {
+public class TestSt003 extends HomeBaseTest {
 
     @Test
     public void testSectionAutobaraholka(){

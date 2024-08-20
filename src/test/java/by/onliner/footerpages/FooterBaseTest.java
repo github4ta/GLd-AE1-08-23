@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class BaseTest {
+public class FooterBaseTest {
     protected WebDriver driver;
     private final String BASE_URL = "https://www.onliner.by/";
     @BeforeEach
