@@ -30,7 +30,6 @@ public class PizzamarketPizzaPage extends BasePage {
     private final By itemProductNameInCartNameBy = By.xpath(itemProductNameInCartXpath);
 
     public void openPage() {
-        String BASE_URL = "https://pizzamarket.by/";
         driver.navigate().to(BASE_URL);
     }
 

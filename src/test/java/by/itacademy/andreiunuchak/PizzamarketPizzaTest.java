@@ -16,15 +16,14 @@ public class PizzamarketPizzaTest extends BaseTest {
         String pizzaName = "Маргарита";
 
         PizzamarketPizzaPage pizzamarketPizzaPage = new PizzamarketPizzaPage();
-        ConfirmAddressModalPage confirmAddressModalPage = new ConfirmAddressModalPage();
-        PizzaAdditionalIngridientsModalPage pizzaAdditionalIngridientsModalPage = new PizzaAdditionalIngridientsModalPage();
-
         pizzamarketPizzaPage.clickMenuButtonPizza();
         pizzamarketPizzaPage.scrollToProduct(pizzaName);
         pizzamarketPizzaPage.clickSelectButtonProduct(pizzaName);
+        ConfirmAddressModalPage confirmAddressModalPage = new ConfirmAddressModalPage();
         confirmAddressModalPage.inputAddressStreet("Победителей");
         confirmAddressModalPage.inputAddressHouse(91);
         confirmAddressModalPage.clickButtonConfirm();
+        PizzaAdditionalIngridientsModalPage pizzaAdditionalIngridientsModalPage = new PizzaAdditionalIngridientsModalPage();
         pizzaAdditionalIngridientsModalPage.clickButtonAddToCart();
 
         Assertions.assertTrue(pizzamarketPizzaPage.getProductNamesInCart().contains(pizzaName));
@@ -36,20 +35,19 @@ public class PizzamarketPizzaTest extends BaseTest {
         String drinkName = "Напиток газированный «Coca-Cola»";
 
         PizzamarketPizzaPage pizzamarketPizzaPage = new PizzamarketPizzaPage();
-        ConfirmAddressModalPage confirmAddressModalPage = new ConfirmAddressModalPage();
-        PizzaAdditionalIngridientsModalPage pizzaAdditionalIngridientsModalPage = new PizzaAdditionalIngridientsModalPage();
-        DrinkSelectSizeModalPage drinkSelectSizeModalPage = new DrinkSelectSizeModalPage();
-
         pizzamarketPizzaPage.clickMenuButtonPizza();
         pizzamarketPizzaPage.scrollToProduct(pizzaName);
         pizzamarketPizzaPage.clickSelectButtonProduct(pizzaName);
+        ConfirmAddressModalPage confirmAddressModalPage = new ConfirmAddressModalPage();
         confirmAddressModalPage.inputAddressStreet("Победителей");
         confirmAddressModalPage.inputAddressHouse(91);
         confirmAddressModalPage.clickButtonConfirm();
+        PizzaAdditionalIngridientsModalPage pizzaAdditionalIngridientsModalPage = new PizzaAdditionalIngridientsModalPage();
         pizzaAdditionalIngridientsModalPage.clickButtonAddToCart();
         pizzamarketPizzaPage.clickMenuButtonDrink();
         pizzamarketPizzaPage.scrollToProduct(drinkName);
         pizzamarketPizzaPage.clickSelectButtonProduct(drinkName);
+        DrinkSelectSizeModalPage drinkSelectSizeModalPage = new DrinkSelectSizeModalPage();
         drinkSelectSizeModalPage.clickButtonAddToCart();
 
         Assertions.assertTrue(pizzamarketPizzaPage.getProductNamesInCart().contains(pizzaName));
