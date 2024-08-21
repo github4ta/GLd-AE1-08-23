@@ -4,14 +4,14 @@ import by.onliner.Waiters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AdditionalIngridientsModalPage {
+public class DrinkSelectSizeModalPage {
     private final WebDriver driver;
 
-    public AdditionalIngridientsModalPage() {
+    public DrinkSelectSizeModalPage() {
         driver = DriverSingleton.getWebDriver();
     }
 
-    private final String buttonAddToCartXpath = "//div[@role='dialog']//button[@class='button']";
+    private final String buttonAddToCartXpath = "//div[@role='dialog']//div[@class='product-modal__text']//button";
     private final By buttonAddToCartBy = By.xpath(buttonAddToCartXpath);
 
     public void clickButtonAddToCart() {

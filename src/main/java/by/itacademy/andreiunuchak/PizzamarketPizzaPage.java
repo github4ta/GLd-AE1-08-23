@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PizzamarketPizzaPage {
     private final WebDriver driver;
@@ -19,14 +19,17 @@ public class PizzamarketPizzaPage {
     private final String menuButtonPizzaXpath = "//a[@href='/pizza#main']";
     private final By menuButtonPizzaBy = By.xpath(menuButtonPizzaXpath);
 
-    private final String itemPizzaNameXpath = "//div[@class='product-item']//h3";
-    private final By itemPizzaNameBy = By.xpath(itemPizzaNameXpath);
+    private final String menuButtonDrinkXpath = "//a[@href='/drink#main']";
+    private final By menuButtonDrinkBy = By.xpath(menuButtonDrinkXpath);
 
-    private final String itemPizzaSelectButtonXpath = "//div[@class='product-item']//button";
-    private final By itemPizzaSelectButtonBy = By.xpath(itemPizzaSelectButtonXpath);
+    private final String itemProductNameXpath = "//div[@class='product-item']//h3";
+    private final By itemProductNameBy = By.xpath(itemProductNameXpath);
 
-    private final String itemCartNameXpath = "//div[@class='cart-item']//h3";
-    private final By itemCartNameBy = By.xpath(itemCartNameXpath);
+    private final String itemProductSelectButtonXpath = "//div[@class='product-item']//button";
+    private final By itemProductSelectButtonBy = By.xpath(itemProductSelectButtonXpath);
+
+    private final String itemProductNameInCartXpath = "//div[@class='cart-item']//h3";
+    private final By itemProductNameInCartNameBy = By.xpath(itemProductNameInCartXpath);
 
     public void openPage() {
         String BASE_URL = "https://pizzamarket.by/";
@@ -38,36 +41,37 @@ public class PizzamarketPizzaPage {
         driver.findElement(menuButtonPizzaBy).click();
     }
 
-    private WebElement findPizzaInList(String pizzaName) {
-        List<WebElement> listItemPizzaNameWebElements = driver.findElements(itemPizzaNameBy);
-        List<WebElement> listItemPizzaSelectButtonWebElement = driver.findElements(itemPizzaSelectButtonBy);
-        for (int i = 0; i < listItemPizzaNameWebElements.size(); i++) {
-            String itemPizzaNameText = listItemPizzaNameWebElements.get(i).getText();
-            if (itemPizzaNameText.equals(pizzaName)) {
-                return listItemPizzaSelectButtonWebElement.get(i);
+    public void clickMenuButtonDrink() {
+        Waiters.waitFor(1);
+        driver.findElement(menuButtonDrinkBy).click();
+    }
+
+    private WebElement findProductInList(String productName) {
+        List<WebElement> listItemProductNameWebElements = driver.findElements(itemProductNameBy);
+        List<WebElement> listItemProductSelectButtonWebElement = driver.findElements(itemProductSelectButtonBy);
+        for (int i = 0; i < listItemProductNameWebElements.size(); i++) {
+            String itemProductNameText = listItemProductNameWebElements.get(i).getText();
+            if (itemProductNameText.equals(productName)) {
+                return listItemProductSelectButtonWebElement.get(i);
             }
         }
         return null;
     }
 
-    public void scrollTo(String pizzaName) {
+    public void scrollToProduct(String productName) {
         Waiters.waitFor(1);
-        new Actions(driver).moveToElement(findPizzaInList(pizzaName)).perform();
+        new Actions(driver).moveToElement(findProductInList(productName)).perform();
     }
 
-    public void clickSelectButtonPizza(String pizzaName) {
-        findPizzaInList(pizzaName).click();
+    public void clickSelectButtonProduct(String productName) {
+        findProductInList(productName).click();
     }
 
 
-    public List<String> getAddedToCartItemNames() {
+    public List<String> getProductNamesInCart() {
         Waiters.waitFor(1);
-        List<WebElement> listCartItemNamesWebElements = driver.findElements(itemCartNameBy);
-        List<String> listAddedToCartItemNames = new ArrayList<>();
-        for (WebElement cartItemWebElement : listCartItemNamesWebElements) {
-            String name = cartItemWebElement.findElement(itemCartNameBy).getText();
-            listAddedToCartItemNames.add(name);
-        }
-        return listAddedToCartItemNames;
+        List<WebElement> listProductNamesInCartWebElements = driver.findElements(itemProductNameInCartNameBy);
+        List<String> listProductNamesInCartText = listProductNamesInCartWebElements.stream().map(WebElement::getText).collect(Collectors.toList());
+        return listProductNamesInCartText;
     }
 }
