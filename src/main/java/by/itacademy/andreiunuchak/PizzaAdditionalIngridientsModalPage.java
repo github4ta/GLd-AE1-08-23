@@ -2,13 +2,11 @@ package by.itacademy.andreiunuchak;
 
 import by.onliner.Waiters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class PizzaAdditionalIngridientsModalPage {
-    private final WebDriver driver;
+public class PizzaAdditionalIngridientsModalPage extends BasePage {
 
     public PizzaAdditionalIngridientsModalPage() {
-        driver = DriverSingleton.getWebDriver();
+        super();
     }
 
     private final String buttonAddToCartXpath = "//div[@role='dialog']//button[@class='button']";

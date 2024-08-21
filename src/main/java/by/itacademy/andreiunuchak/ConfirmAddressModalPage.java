@@ -2,13 +2,11 @@ package by.itacademy.andreiunuchak;
 
 import by.onliner.Waiters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class ConfirmAddressModalPage {
-    private final WebDriver driver;
+public class ConfirmAddressModalPage extends BasePage {
 
     public ConfirmAddressModalPage() {
-        driver = DriverSingleton.getWebDriver();
+        super();
     }
 
     private final String inputAddressStreetXpath = "//input[@id='street']";

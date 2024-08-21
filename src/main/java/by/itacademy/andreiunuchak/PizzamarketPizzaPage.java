@@ -2,18 +2,16 @@ package by.itacademy.andreiunuchak;
 
 import by.onliner.Waiters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PizzamarketPizzaPage {
-    private final WebDriver driver;
+public class PizzamarketPizzaPage extends BasePage {
 
     public PizzamarketPizzaPage() {
-        driver = DriverSingleton.getWebDriver();
+        super();
     }
 
     private final String menuButtonPizzaXpath = "//a[@href='/pizza#main']";

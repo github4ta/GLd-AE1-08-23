@@ -2,13 +2,11 @@ package by.itacademy.andreiunuchak;
 
 import by.onliner.Waiters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class DrinkSelectSizeModalPage {
-    private final WebDriver driver;
+public class DrinkSelectSizeModalPage extends BasePage {
 
     public DrinkSelectSizeModalPage() {
-        driver = DriverSingleton.getWebDriver();
+        super();
     }
 
     private final String buttonAddToCartXpath = "//div[@role='dialog']//div[@class='product-modal__text']//button";
