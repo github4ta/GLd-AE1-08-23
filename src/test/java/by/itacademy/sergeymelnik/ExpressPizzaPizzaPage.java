@@ -1,11 +1,8 @@
 package by.itacademy.sergeymelnik;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -44,7 +41,6 @@ public class ExpressPizzaPizzaPage extends BaseTest {
     public void goToMiidleCart(WebDriver driver){
         By middleCartBy = By.xpath(MIDDLE_CART);
         new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.presenceOfElementLocated(middleCartBy));
-     //   new WebDriverWait(driver, Duration.ofSeconds(1)).until(ExpectedConditions.presenceOfElementLocated(menuButtonPizza));
         WebElement middleCartWebElement = driver.findElement(middleCartBy);
         middleCartWebElement.click();
     }
@@ -54,8 +50,6 @@ public class ExpressPizzaPizzaPage extends BaseTest {
         WebElement onePizzaWebElement = driver.findElement(onePizzaBy);
         return onePizzaWebElement.getText();
     }
-
-
 
 
 }
