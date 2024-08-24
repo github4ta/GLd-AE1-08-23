@@ -8,11 +8,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ExpressPizzaPizzaPage extends BaseTest {
+public class ExpressPizzaPizzaPage extends BasePage {
 
-    WebDriver driver;
-
-    public ExpressPizzaPizzaPage() {
+     public ExpressPizzaPizzaPage() {
         super();
     }
 

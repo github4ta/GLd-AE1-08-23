@@ -9,6 +9,7 @@ public class BaseTest {
 
     @BeforeEach
     protected void driverSetUp(){
+
         driver = DriverSingletone.getWebDriver();
     }
 
