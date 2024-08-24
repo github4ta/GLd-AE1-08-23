@@ -24,7 +24,7 @@ public class DominosPizzaTest {
     }
 
     @Test
-    public void testPizza4SeasonsInBin() {
+    public void testPizza4SeasonsAndCocaColaInBin() {
         By linkOpenPizzaBy = By.xpath(DominosPizzaPage.LINK_PIZZA);
         WebElement linkOpenPizzaWebElement = driver.findElement(linkOpenPizzaBy);
         linkOpenPizzaWebElement.click();

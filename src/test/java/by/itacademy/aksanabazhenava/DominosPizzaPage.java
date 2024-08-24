@@ -3,7 +3,6 @@ package by.itacademy.aksanabazhenava;
 public class DominosPizzaPage {
 
     public static final String LINK_PIZZA = "//a[@href='https://dominos.by/ru/minsk/#Pizza']";
-
     public static final String TITLE_PIZZA = "//section[@id='Pizza']/div/h1";
     public static final String BUTTON_ADD_TOBIN_PIZZA_4SEASONS = "//article[@id='86fbc3b1-bd87-4e91-bfd4-eb0088e64fc4']//button[@class='red-button']/div";
     public static final String BUTTON_ORDER = "//a[@href='https://dominos.by/ru/minsk/checkout/delivery/']";
