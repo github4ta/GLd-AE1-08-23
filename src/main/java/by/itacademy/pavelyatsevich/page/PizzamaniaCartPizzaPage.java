@@ -10,29 +10,30 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PizzamainiaCartPizzaPage extends AbstractPage {
+public class PizzamaniaCartPizzaPage extends AbstractPage {
 
     private static final String CART_URL = "https://pizzamania.by/cart.php";
-    private final String MARGARITA_CART_LIST_TEXT = "Маргарита*";
-    private final String PEPSI_COLA_CART_LIST_TEXT = "Pepsi-cola";
+    public static final String MARGARITA_CART_LIST_TEXT = "Маргарита*";
+    public static final String PEPSI_COLA_CART_LIST_TEXT = "Pepsi-cola";
 
-    @FindAll( @FindBy(xpath = "//div[@class='row cart_item']"))
+    @FindAll(@FindBy(xpath = "//div[@class='col-8 col-sm-5 order-2 product_text-container " +
+            "d-flex align-items-center']/div/h5"))
     private List<WebElement> cartList;
 
     public List<String> getListProductsInCart() {
-        Waiters.waitFor(1);
+        Waiters.waitFor(2);
         return cartList.stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
     }
 
     @Override
-    protected PizzamainiaCartPizzaPage openPage() {
+    public PizzamaniaCartPizzaPage openPage() {
         driver.navigate().to(CART_URL);
         return this;
     }
 
-    protected PizzamainiaCartPizzaPage(WebDriver driver) {
+    public PizzamaniaCartPizzaPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
     }
