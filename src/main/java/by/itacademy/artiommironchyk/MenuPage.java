@@ -14,7 +14,7 @@ public class MenuPage {
     private final By fourSeasonsPizzaAddToCartButton = By.xpath("//div[@id='mainDiv']//li[contains(., 'Четыре сезона')]//button[contains(@class, 'in-cart')]");
     private final By pickupTab = By.xpath("//a[@href='#pickup']");
     private final By gazetapravdaButton = By.xpath("//button[@id='bypickup-2' and contains(text(), 'Газеты Правда просп., 20')]");
-    private final By cartButton = By.xpath("//a[@data-forward='cart']"); // Локатор для корзины
+    private final By cartButton = By.xpath("//a[@data-forward='cart']");
 
     public MenuPage(WebDriver driver) {
         this.driver = driver;
