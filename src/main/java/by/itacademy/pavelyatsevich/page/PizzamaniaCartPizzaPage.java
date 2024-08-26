@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 public class PizzamaniaCartPizzaPage extends AbstractPage {
 
     private static final String CART_URL = "https://pizzamania.by/cart.php";
+    private static final String CART_LIST_XPATH = "//div[@class='col-8 col-sm-5 order-2 product_text-container d-flex align-items-center']/div/h5";
     public static final String MARGARITA_CART_LIST_TEXT = "Маргарита*";
     public static final String PEPSI_COLA_CART_LIST_TEXT = "Pepsi-cola";
 
-    @FindAll(@FindBy(xpath = "//div[@class='col-8 col-sm-5 order-2 product_text-container " +
-            "d-flex align-items-center']/div/h5"))
+    @FindAll(@FindBy(xpath = CART_LIST_XPATH))
     private List<WebElement> cartList;
 
     public List<String> getListProductsInCart() {

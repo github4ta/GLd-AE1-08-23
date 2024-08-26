@@ -9,20 +9,25 @@ import org.openqa.selenium.support.PageFactory;
 public class PizzamaniaMainPizzaPage extends AbstractPage {
 
     private static final String BASE_URL = "https://pizzamania.by/";
+    private static final String PIZZA_BUTTON_MENU_BLOCK_XPATH = "//a[@href='/#pizza']";
+    private static final String PIZZA_MARGARITA_CART_BUTTON_XPATH = "//a[@data-id='37']";
+    private static final String DESERTS_AND_BEVERAGES_BUTTON_MENU_BLOCK_XPATH = "//a[@href='/#desserts']";
+    private static final String PEPSI_COLA_CART_BUTTON_XPATH = "//a[@data-id='91']";
+    private static final String CART_BUTTON_XPATH = "//a[@id='basket']";
 
-    @FindBy(xpath = "//a[@href='/#pizza']")
+    @FindBy(xpath = PIZZA_BUTTON_MENU_BLOCK_XPATH)
     private WebElement pizzaButtonMenuBlock;
 
-    @FindBy(xpath = "//a[@data-id='37']")
-    private WebElement pizzaMargarita;
+    @FindBy(xpath = PIZZA_MARGARITA_CART_BUTTON_XPATH)
+    private WebElement pizzaMargaritaCartButton;
 
-    @FindBy(xpath = "//a[@href='/#desserts']")
+    @FindBy(xpath = DESERTS_AND_BEVERAGES_BUTTON_MENU_BLOCK_XPATH)
     private WebElement desertsAndBeveragesButtonMenuBlock;
 
-    @FindBy(xpath = "//a[@data-id='91']")
-    private  WebElement pepsiCola;
+    @FindBy(xpath = PEPSI_COLA_CART_BUTTON_XPATH)
+    private  WebElement pepsiColaCartButton;
 
-    @FindBy(xpath = "//a[@id='basket']")
+    @FindBy(xpath = CART_BUTTON_XPATH)
     private WebElement cartButton;
 
     public PizzamaniaMainPizzaPage clickPizzaInMenuBlock() {
@@ -33,13 +38,13 @@ public class PizzamaniaMainPizzaPage extends AbstractPage {
 
     public PizzamaniaMainPizzaPage addPizzaMargaritaToCart() {
         Waiters.waitFor(3);
-        pizzaMargarita.click();
+        pizzaMargaritaCartButton.click();
         return this;
     }
 
     public PizzamaniaMainPizzaPage addPepsiColaToCart() {
         Waiters.waitFor(3);
-        pepsiCola.click();
+        pepsiColaCartButton.click();
         return this;
     }
 
