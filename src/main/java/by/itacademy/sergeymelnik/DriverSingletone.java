@@ -8,7 +8,7 @@ public class DriverSingletone {
 
     private static WebDriver driver;
 
-    public DriverSingletone() {
+    private DriverSingletone() {
     }
 
     public static WebDriver getWebDriver(){

@@ -7,6 +7,5 @@ public class Waiter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 }

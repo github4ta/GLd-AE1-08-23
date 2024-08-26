@@ -13,9 +13,8 @@ public class ExpressPizzaPizzaPage extends BasePage {
      public ExpressPizzaPizzaPage() {
         super();
     }
-
-    private final String FIELD_CONTENT_PIZZA_XPATH = "//a[@href='/picca']";
     private final String URL = "https://express-pizza.by/";
+    private final String FIELD_CONTENT_PIZZA_XPATH = "//a[@href='/picca']";
     public static final String PIZZA_MARGARITA_30_CM = "//button[@id='edit-submit-42523']";
     private static final String MIDDLE_CART = "//li[@class='cart-block-checkout']/a[@href='/cart/checkout']";
     private static final String ONE_IN_CAR = "//td[@class='desc']";
@@ -48,6 +47,4 @@ public class ExpressPizzaPizzaPage extends BasePage {
         WebElement onePizzaWebElement = driver.findElement(onePizzaBy);
         return onePizzaWebElement.getText();
     }
-
-
 }
