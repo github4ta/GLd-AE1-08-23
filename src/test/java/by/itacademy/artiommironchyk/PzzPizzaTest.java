@@ -21,11 +21,10 @@ public class PzzPizzaTest {
     @Test
     public void testAddFourSeasonsToCart() throws InterruptedException {
         menuPage.clickOnPizzas();
-        Thread.sleep(2000); // Ожидание загрузки страницы с пиццами
+        Thread.sleep(2000);
         menuPage.scrollToAndAddFourSeasonsToCart();
-        Thread.sleep(2000); // Ожидание появления модального окна
-        menuPage.clickOnPickup(); // Нажатие на "Самовывоз"
-        Thread.sleep(2000); // Ожидание появления списка адресов
-        menuPage.clickOnGazetaPravda(); // Нажатие на кнопку "Газеты Правда просп., 20"
-    }
+        Thread.sleep(2000);
+        menuPage.clickOnPickup();
+        Thread.sleep(2000);
+        menuPage.clickOnGazetaPravda();
 }
