@@ -10,7 +10,6 @@ public class MenuPage {
     private WebDriver driver;
     private JavascriptExecutor jsExecutor;
 
-    // Локаторы для элементов
     private final By pizzasLink = By.xpath("//a[contains(@class, 'navigation-goods__item') and text()='пиццы']");
     private final By fourSeasonsPizzaAddToCartButton = By.xpath("//div[@id='mainDiv']//li[contains(., 'Четыре сезона')]//button[contains(@class, 'in-cart')]");
     private final By pickupTab = By.xpath("//a[@href='#pickup']");
@@ -22,18 +21,15 @@ public class MenuPage {
         this.jsExecutor = (JavascriptExecutor) driver;
     }
 
-    // Метод для клика на ссылку "пиццы"
     public void clickOnPizzas() {
         WebElement element = driver.findElement(pizzasLink);
         jsExecutor.executeScript("arguments[0].click();", element);
     }
 
-    // Метод для прокрутки страницы и клика на кнопку "В корзину" для пиццы "Четыре сезона"
     public void scrollToAndAddFourSeasonsToCart() {
         WebElement element = driver.findElement(fourSeasonsPizzaAddToCartButton);
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
 
-        // Проверка видимости элемента и клик
         if (element.isDisplayed()) {
             jsExecutor.executeScript("arguments[0].click();", element);
         } else {
@@ -41,19 +37,16 @@ public class MenuPage {
         }
     }
 
-    // Метод для клика на "Самовывоз"
     public void clickOnPickup() {
         WebElement pickupElement = driver.findElement(pickupTab);
         jsExecutor.executeScript("arguments[0].click();", pickupElement);
     }
 
-    // Метод для клика на кнопку "Газеты Правда просп., 20"
     public void clickOnGazetaPravda() {
         WebElement gazetaPravdaElement = driver.findElement(gazetapravdaButton);
         jsExecutor.executeScript("arguments[0].click();", gazetaPravdaElement);
     }
 
-    // Метод для клика на корзину
     public void clickOnCart() {
         WebElement cartElement = driver.findElement(cartButton);
         jsExecutor.executeScript("arguments[0].click();", cartElement);
