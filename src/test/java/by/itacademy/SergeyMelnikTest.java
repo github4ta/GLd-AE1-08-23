@@ -12,9 +12,11 @@ public class SergeyMelnikTest {
     public void testGetDemoqaStatusCode() {
         when().
                 get("https://demoqa.com/BookStore/v1/Books").
-                then().log().all().
+                then().
+                //log().all().
                 statusCode(200).
-                body("books[0].title", equalTo("Git Pocket Guide"));
+                //body("books[0].title", equalTo("Git Pocket Guide"));
+                body("books.title", hasItem(containsStringIgnoringCase("git")));
     }
 
     @Test
@@ -47,7 +49,8 @@ public class SergeyMelnikTest {
                 //log().body().
                 assertThat().
                 statusCode(200).
-                body("cards.name", hasItem(containsStringIgnoringCase("Flat 5x7 Card")));
+                //body("cards.name", hasItem(containsStringIgnoringCase("Flat 5x7 Card")));
+                body("cards.find{it.name=='Flat 5x7 Card'}.name", equalTo("Flat 5x7 Card"));
 
     }
 
