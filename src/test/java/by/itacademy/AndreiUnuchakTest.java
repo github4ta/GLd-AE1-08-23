@@ -82,7 +82,7 @@ public class AndreiUnuchakTest {
     private int getUniqueBookingID() {
         Response response = RestAssured
                 .when()
-                .get("/");
+                .get("/booking/");
         List<Integer> bookingIDs = response.body().jsonPath().getList("bookingid");
         HashSet<Integer> uniqueBookingIDs = new HashSet<>();
         List<Integer> duplicatedBookingIDs = new ArrayList<>();
