@@ -1,4 +1,4 @@
-package by.itacademy.denisbaranov;
+package by.itacademy.denisbaranov.onliner;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;

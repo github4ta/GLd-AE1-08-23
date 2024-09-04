@@ -1,6 +1,4 @@
-package by.itacademy.denisbaranov;
-
-import io.restassured.response.Response;
+package by.itacademy.denisbaranov.onliner;
 
 import java.util.HashMap;
 import java.util.Map;
