@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class HomeBaseTest {
+public class BaseTest {
 
     protected WebDriver driver;
     final String BASE_URL = "https://www.onliner.by/";
